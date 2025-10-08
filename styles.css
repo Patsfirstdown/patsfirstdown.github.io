@@ -31,3 +31,10 @@ table.headerForm{
     height: 100px;
 }
 
+header.welcome{
+    width: 100%
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
