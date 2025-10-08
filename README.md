@@ -1,4 +1,4 @@
 # patsfirstdown.github.io
 
-[Visit Prof Site](patsfirstdown.github.io/prof_site.html)
+[Visit Prof Site](https://patsfirstdown.github.io/prof_site.html)
 
