@@ -1,0 +1,45 @@
+/*CSS files
+Jayden Pickin
+Created: 10/08/2025*/
+
+body {
+    background-color: orange;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+    text-align: center;
+    background-color:red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+table{
+    width: 100%;
+    align-items: center;
+}
+
+table.form, tr.form, td.form, th.form{
+    width: 100%;
+    background-color:red;
+    font-size: 30px;
+    font-weight: 200;
+    font-style: oblique;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0px;
+    border-spacing: 00px;
+}
+
+table.footer, tr.footer, td.footer{
+    background-color: red;
+    border: 0px solid red;
+    border-collapse: collapse;
+    padding-left: 0px;
+    color: white;
+}
