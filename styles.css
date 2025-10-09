@@ -136,7 +136,24 @@ li.right_link{
     style:float:right;
 }
 
+ul li{
+    float: left
+}
 
+ul li a{
+    overflow: hidden;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a.header:link,a.header:visited,a.header:hover{
+    color:black
+}
+
+li.right_link{
+    float: right;
+}
 
 
 
