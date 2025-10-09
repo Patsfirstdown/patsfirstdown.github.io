@@ -12,7 +12,7 @@ h1 {
     font-family: "cursive", Lucida-Handwriting;
     font-weight: normal;
     color: white;
-    font-size: vw50;
+    font-size: vh75.2;
     vertical-align: center;
 }
 
@@ -41,6 +41,7 @@ header.welcome{
     background-color: black;
     color: white;
 }
+
 
 
 
