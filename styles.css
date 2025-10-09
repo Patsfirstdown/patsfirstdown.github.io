@@ -8,12 +8,10 @@ body {
 }
 
 h1 {
-    text-align: center;
     font-family: Lucida-Handwriting, cursive;
     font-weight: normal;
     color: white;
     font-size: 75vh;
-    vertical-align: center;
 }
 
 h2 {
@@ -45,6 +43,7 @@ header.welcome{
     background-color: black;
     color: white;
 }
+
 
 
 
