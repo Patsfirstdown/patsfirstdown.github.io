@@ -124,6 +124,10 @@ nav a:hover {
 
 ul.nav{
     background-color: blue;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     width:100%;
     height: 50px;
 }
@@ -131,6 +135,7 @@ ul.nav{
 li.right_link{
     style:float:right;
 }
+
 
 
 
