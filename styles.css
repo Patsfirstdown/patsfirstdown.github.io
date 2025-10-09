@@ -94,6 +94,35 @@ header.welcome{
     color: white;
 }
 
+header {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* space between logo and links */
+  align-items: center;
+  padding: 15px 40px;
+}
+
+/* Logo style */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffcc00; /* hover color */
+}
+
+
 
 
 
