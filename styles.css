@@ -122,6 +122,15 @@ nav a:hover {
   color: #ffcc00; /* hover color */
 }
 
+ul.nav{
+    background-color: blue;
+    width:100%;
+    height: 50px;
+}
+
+li.right_link{
+    style:float:right;
+}
 
 
 
