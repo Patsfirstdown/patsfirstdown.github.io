@@ -3,9 +3,12 @@ Jayden Pickin
 Created: 10/08/2025*/
 
 body {
+    margin: 0px;
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
 }
+
+html
 
 h1 {
     text-align: center;
@@ -96,7 +99,8 @@ header.welcome{
 }
 
 ul li a:hover {
-  color: Blue;
+    text-decoration: underline;
+    background-color: darkcyan;
 }
 
 ul.nav{
@@ -132,6 +136,7 @@ a.header:link,a.header:visited,a.header:hover{
 li.right_link{
     float: right;
 }
+
 
 
 
