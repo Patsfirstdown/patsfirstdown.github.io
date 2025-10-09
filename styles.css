@@ -64,6 +64,14 @@ header.mainHeader{
     height: 4rem;
     display: block;
 }
+header.subHeader{
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    width: 100%;
+    height: 2.5rem;
+    display: block;
+}
 
 div.headercontent{
     display: flex;
@@ -193,6 +201,7 @@ li.right_link{
   from {opacity: 0.4;}
   to {opacity: 1;}
 }
+
 
 
 
