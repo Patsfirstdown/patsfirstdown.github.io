@@ -3,6 +3,7 @@ Jayden Pickin
 Created: 10/08/2025*/
 
 body {
+    padding: 0px;
     margin: 0px;
     background-color: white;
     font-family: 'Times New Roman', Times, serif;
@@ -136,6 +137,7 @@ a.header:link,a.header:visited,a.header:hover{
 li.right_link{
     float: right;
 }
+
 
 
 
