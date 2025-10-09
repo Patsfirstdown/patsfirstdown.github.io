@@ -85,6 +85,7 @@ div.headeritemsRight{
 }
 
 header.welcome{
+    padding: 0px;
     display: flex;
     justify-content: center;
     height: 400px;
@@ -99,6 +100,7 @@ ul li a:hover {
 }
 
 ul.nav{
+    position: sticky;
     background-color: darkgrey;
     list-style-type: none;
     margin: 0;
@@ -130,6 +132,7 @@ a.header:link,a.header:visited,a.header:hover{
 li.right_link{
     float: right;
 }
+
 
 
 
