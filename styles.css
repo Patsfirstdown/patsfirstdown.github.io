@@ -163,6 +163,47 @@ li.right_link{
 
 
 
+.content_section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.content_entry {
+    display: flex;
+    align-items: center;
+    background-color: 1209a4;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.content_logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.content_details h2 {
+  margin: 0;
+  color: #333;
+}
+
+.content_details p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.content_details ul {
+  margin-top: 8px;
+  padding-left: 20px;
+  color: #444;
+}
+
+
+
+
+
 .slideshow-container {
   position: relative;
   max-width: 800px;
@@ -214,6 +255,7 @@ li.right_link{
   from {opacity: 0.4;}
   to {opacity: 1;}
 }
+
 
 
 
