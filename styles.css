@@ -28,12 +28,19 @@ table{
 }
 
 table.headerForm, tr.headerForm, th.headerForm, td.headerForm{
+    position: sticky;
     display: table;
     width: 100%;
     background-color: darkRed;
     height: 50px;
-    font-size: 4vh;
+    font-size: 200%;
     border-spacing: 6px;
+}
+
+td.right{
+    text-align: right;
+    display: table;
+    width: 100%;
 }
 
 table.footerForm, tr.footerForm, th.footerForm,td.footerForm{
@@ -56,6 +63,7 @@ header.welcome{
     background-color: black;
     color: white;
 }
+
 
 
 
