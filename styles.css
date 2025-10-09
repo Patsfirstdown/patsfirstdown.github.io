@@ -68,6 +68,22 @@ div.headercontent{
     width: 100%;
 }
 
+div.headeritemsLeft{
+    align-items: center;
+    display: inline-flex;
+    padding-right: 1.5rem;
+}
+div.headeritemsMiddle{
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+div.headeritemsRight{
+    align-items: center;
+    display: inline-flex;
+    padding-left: 1.5rem;
+}
+
 header.welcome{
     display: flex;
     justify-content: center;
@@ -77,6 +93,7 @@ header.welcome{
     background-color: black;
     color: white;
 }
+
 
 
 
