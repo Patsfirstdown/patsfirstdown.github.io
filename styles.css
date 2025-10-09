@@ -27,7 +27,16 @@ table{
     align-items: center;
 }
 
-table.headerForm, tr.headerForm, th.headerForm,td.headerForm{
+table.headerForm, tr.headerForm, th.headerForm, td.headerForm{
+    display: table;
+    width: 100%;
+    background-color: darkRed;
+    height: 50px;
+    font-size: 8vh;
+    border-spacing: 6px;
+}
+
+table.footerForm, tr.footerForm, th.footerForm,td.footerForm{
     display: table;
     width: 100%;
     text-align: center;
@@ -47,6 +56,7 @@ header.welcome{
     background-color: black;
     color: white;
 }
+
 
 
 
