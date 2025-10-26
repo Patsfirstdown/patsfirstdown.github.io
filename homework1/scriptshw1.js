@@ -91,7 +91,8 @@ function checklname(){
 function checkdateOfBirth(){
   const dob = new Date(dateOfBirthInput.value);
   const today = new Date();
-  const old = today.setFullYear(today.getFullYear()+120)
+  const oldDate = new Date();
+  const old = oldDate.setFullYear(oldDate.getFullYear()-120)
   
   if(dob < today){
     document.getElementById("dOBError").innerHTML="Allowed"+dob+today+(dob<today);
