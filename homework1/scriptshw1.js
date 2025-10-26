@@ -94,7 +94,7 @@ function checkdateOfBirth(){
   const old = today.setFullYear(today.getFullYear()+120)
   
   if(dob < today){
-    document.getElementById("dOBError").innerHTML="Allowed";
+    document.getElementById("dOBError").innerHTML="Allowed"+dob+today+(dob<today);
   }
   else if(dob > old){
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
