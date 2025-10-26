@@ -33,10 +33,10 @@ const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
 const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
 
 function lengthAllowed(Input,maxLength,minLength){
-  if(Input.value.length>maxLength){
+  if(Input>maxLength){
     return false
   }
-  else if(Input.value.length<minLength){
+  else if(Input<minLength){
     return false
   }
   else{
@@ -88,7 +88,7 @@ function checkdateOfBirth(){
   const today = new Date();
   const old = today.setFullYear(today.getFullYear()+120)
   
-  if(dateOfBirthInput.value > today){
+  if(dateOfBirthInput.value < today){
     document.getElementById("dOBError").innerHTML="Allowed";
   }
   else if(dateOfBirthInput.value > old){
@@ -146,7 +146,7 @@ function checkcity(){
 }
   
 function checkstate(){
-  if(stateInput=="ERRORBADNOEVILDONTDOTHISONE"){
+  if(stateInput.value=="ERRORBADNOEVILDONTDOTHISONE"){
     document.getElementById("stateError").innerHTML="NOT ALLOWED--Please Select a Valid Option";
   }
   else{
@@ -183,7 +183,7 @@ function checkemail(){
 }
   
 function checkcurrentSymptoms(){
-  if(currentSymptomsInput.includes('"')){
+  if(currentSymptomsInput.value.includes('"')){
     document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
   }
 }
@@ -223,11 +223,11 @@ function checkuserId(){
 function checkpassword(){
   if(passwordInput.value.length>0){
     if(passwordFormat.test(passwordInput.value)){
-      if(lengthAllowed(passwordInput.value,8,30)){
+      if(lengthAllowed(passwordInput.value,30,8)){
          document.getElementById("password1Error").innerHTML="Allowed";
       }
       else{
-        document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters")
+        document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters";
       }
     }
     else{
