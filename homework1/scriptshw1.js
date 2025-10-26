@@ -55,6 +55,7 @@ function checkfname(){
     else{
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, and Dashes only";
     }
+  }
 }
 
 function checkmInitial(){
@@ -79,6 +80,7 @@ function checklname(){
     else{
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, 2-5, and Dashes only";
     }
+  }
 }
   
 function checkdateOfBirth(){
@@ -118,6 +120,7 @@ function checkaddressLine1(){
     }
   }
 }
+
 function checkaddressLine2(){
   //no check needed
   if(addressLine2input.length>0){
