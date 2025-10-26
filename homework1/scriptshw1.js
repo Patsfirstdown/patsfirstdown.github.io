@@ -6,7 +6,7 @@ const currentDate = new Date(year,month,date)
 
 const fnameInput = document.getElementById("fname");
 const mInitialInput = document.getElementById("mInitial");
-const lnameInput = document.getElementById("name");
+const lnameInput = document.getElementById("lname");
 const dateOfBirthInput = document.getElementById("dateOfBirth");
 const socialSecurityInput = document.getElementById("socialSecurity");
 const addressLine1Input = document.getElementById("addressLine1");
@@ -31,21 +31,21 @@ const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userIDFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
 const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z].+$/;
 
-function lengthAllowed(Input,maxLength,minLength)){
+function lengthAllowed(Input,maxLength,minLength){
   if(Input.length>maxLength){
-    return False
+    return false
   }
   else if(Input.length<minLength){
-    return True
+    return true
   }
   else{
-    return False
+    return false
   }
 }
 
 function checkfname(){
   const fnameValue = fnameInput.value.trim();
-  if(fnameValue.length>0){
+  if(fnameValue.value.length>0){
     if(lengthAllowed(fnameValue,30,1){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
     }
@@ -70,8 +70,8 @@ function checkmInitial(){
   
 function checklname(){
   const lnameValue = lnameInput.value.trim();
-  if(lnameValue.length>0){
-    if(lengthAllowed(lnameValue,30,1){
+  if(lnameValue.value.length>0){
+    if(lengthAllowed(lnameValue,30,1)){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Too Long";
     }
     else if(letterApostDashNumChars.test(lnameValue)){
@@ -87,10 +87,10 @@ function checkdateOfBirth(){
   const today = new Date();
   const old = today.setFullYear(today.getFullYear()+120)
   
-  if(dateOfBirthInput > today){
+  if(dateOfBirthInput.value > today){
     document.getElementById("dOBError").innerHTML="Allowed";
   }
-  else if(dateOfBirthInput > old){
+  else if(dateOfBirthInput.value > old){
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
   }
   else{
@@ -112,7 +112,7 @@ function checksocialSecurity(){
 function checkaddressLine1(){
   //no check needed
   if(addressLine1Input.length>0){
-    if(lengthAllowed(addressLine1Input,30,2){
+    if(lengthAllowed(addressLine1Input,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -124,7 +124,7 @@ function checkaddressLine1(){
 function checkaddressLine2(){
   //no check needed
   if(addressLine2Input.length>0){
-    if(lengthAllowed(addressLine2Value,30,2){
+    if(lengthAllowed(addressLine2Value,30,2)){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -135,7 +135,7 @@ function checkaddressLine2(){
   
 function checkcity(){
   if(cityInput.length>0){
-    if(lengthAllowed(cityValue,30,2){
+    if(lengthAllowed(cityValue,30,2)){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -157,7 +157,7 @@ function checkzipcode(){
   const zipcodeValue = zipcodeInput.value.trim();
   if(zipcodeInput.length>0){
     if(NumDashOnly.test(socialSecurityValue)){
-      if(lengthAllowed(zipcodeValue,30,2){
+      if(lengthAllowed(zipcodeValue,30,2)){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
       }
       else{
@@ -182,7 +182,7 @@ function checkemail(){
 }
   
 function checkcurrentSymptoms(){
-  if(currentSymptomsInput.inclues('"'){
+  if(currentSymptomsInput.includes('"'){
     document.getElementById("emailError").innerHTML='NOT ALLOWED--" Is not allowed';
   }
 }
@@ -206,7 +206,7 @@ function checkdrinksPerWeek(){
 function checkuserId(){
   if(userIDInput.length>0){
     if(userIDFormat.test(userIDInput)){
-      if(lengthAllowed(userIDInput,5,30){
+      if(lengthAllowed(userIDInput,5,30)){
          document.getElementById("userIDError").innerHTML="Allowed";
       }
       else{
@@ -222,11 +222,11 @@ function checkuserId(){
 function checkpassword(){
   if(passwordInput.length>0){
     if(passwordFormat.test(passwordInput)){
-      if(lengthAllowed(passwordInput,8,30){
-         document.getElementById("passwordFormatError").innerHTML="Allowed";
+      if(lengthAllowed(passwordInput,8,30)){
+         document.getElementById("password1Error").innerHTML="Allowed";
       }
       else{
-        document.getElementByID("passwordFormatError").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters")
+        document.getElementByID("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters")
       }
     }
     else{
@@ -244,27 +244,27 @@ function checkpasswordmatch(){
 document.addEventListener("DOMContentLoaded",()=>{
   const dpwValue=document.getElementByID("dpwDisplay")
 
-  drinksPerWeekInput.addEventListener("Input",()=>{
+  drinksPerWeekInput.addEventListener("input",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
 });
 
-fname.addEventListener("input", checkfname);
-mInitial.addEventListener("input", checkmInitial);
-lname.addEventListener("input", checklname);
-dateOfBirth.addEventListener("input", checkdateOfBirth);
-socialSecurity.addEventListener("input", checksocialSecurity);
-addressLine1.addEventListener("input", checkaddressLine1);
-addressLine2.addEventListener("input", checkaddressLine2);
-city.addEventListener("input", checkcity);
-state.addEventListener("input", checkstate);
-zipcode.addEventListener("input", checkzipcode);
-email.addEventListener("input", checkemail);
-currentSymptoms.addEventListener("input", checkcurrentSymptoms);
-painLocation.addEventListener("input", checkpainLocation);
-hairColor.addEventListener("input", checkhairColor);
-heardOfUs.addEventListener("input", checkheardOfUs);
-drinksPerWeek.addEventListener("input", checkdrinksPerWeek);
-userId.addEventListener("input", checkuserId);
-password.addEventListener("input", checkpassword);
-password2.addEventListener("input", checkpasswordmatch);
+fnameinput.addEventListener("input", checkfname);
+mInitialinput.addEventListener("input", checkmInitial);
+lnameinput.addEventListener("input", checklname);
+dateOfBirthinput.addEventListener("input", checkdateOfBirth);
+socialSecurityinput.addEventListener("input", checksocialSecurity);
+addressLine1input.addEventListener("input", checkaddressLine1);
+addressLine2input.addEventListener("input", checkaddressLine2);
+cityinput.addEventListener("input", checkcity);
+stateinput.addEventListener("input", checkstate);
+zipcodeinput.addEventListener("input", checkzipcode);
+emailinput.addEventListener("input", checkemail);
+currentSymptomsinput.addEventListener("input", checkcurrentSymptoms);
+painLocationinput.addEventListener("input", checkpainLocation);
+hairColorinput.addEventListener("input", checkhairColor);
+heardOfUsinput.addEventListener("input", checkheardOfUs);
+drinksPerWeekinput.addEventListener("input", checkdrinksPerWeek);
+userIdinput.addEventListener("input", checkuserId);
+passwordinput.addEventListener("input", checkpassword);
+password2input.addEventListener("input", checkpassword2);
