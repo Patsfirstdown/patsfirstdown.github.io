@@ -29,24 +29,24 @@ const NumDashOnly = /^[123457890-]+(?: [123457890-]+)*$/;
 const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
 const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userIDFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
-const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z].+$/;
+const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
 
 function lengthAllowed(Input,maxLength,minLength){
   if(Input.length>maxLength){
     return false
   }
   else if(Input.length<minLength){
-    return true
+    return false
   }
   else{
-    return false
+    return true
   }
 }
 
 function checkfname(){
   const fnameValue = fnameInput.value.trim();
   if(fnameValue.value.length>0){
-    if(lengthAllowed(fnameValue,30,1){
+    if(lengthAllowed(fnameValue,30,1)){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
     }
     else if(letterApostDashChars.test(fnameValue)){
@@ -111,7 +111,7 @@ function checksocialSecurity(){
 
 function checkaddressLine1(){
   //no check needed
-  if(addressLine1Input.length>0){
+  if(addressLine1Input.value.length>0){
     if(lengthAllowed(addressLine1Input,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
@@ -182,7 +182,7 @@ function checkemail(){
 }
   
 function checkcurrentSymptoms(){
-  if(currentSymptomsInput.includes('"'){
+  if(currentSymptomsInput.includes('"')){
     document.getElementById("emailError").innerHTML='NOT ALLOWED--" Is not allowed';
   }
 }
@@ -210,7 +210,7 @@ function checkuserId(){
          document.getElementById("userIDError").innerHTML="Allowed";
       }
       else{
-        document.getElementByID("userIDError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters")
+        document.getElementById("userIDError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters")
       }
     }
     else{
@@ -226,7 +226,7 @@ function checkpassword(){
          document.getElementById("password1Error").innerHTML="Allowed";
       }
       else{
-        document.getElementByID("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters")
+        document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters")
       }
     }
     else{
@@ -242,29 +242,29 @@ function checkpasswordmatch(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-  const dpwValue=document.getElementByID("dpwDisplay")
+  const dpwValue=document.getElementById("dpwDisplay")
 
   drinksPerWeekInput.addEventListener("input",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
 });
 
-fnameinput.addEventListener("input", checkfname);
-mInitialinput.addEventListener("input", checkmInitial);
-lnameinput.addEventListener("input", checklname);
-dateOfBirthinput.addEventListener("input", checkdateOfBirth);
-socialSecurityinput.addEventListener("input", checksocialSecurity);
-addressLine1input.addEventListener("input", checkaddressLine1);
-addressLine2input.addEventListener("input", checkaddressLine2);
-cityinput.addEventListener("input", checkcity);
-stateinput.addEventListener("input", checkstate);
-zipcodeinput.addEventListener("input", checkzipcode);
-emailinput.addEventListener("input", checkemail);
-currentSymptomsinput.addEventListener("input", checkcurrentSymptoms);
-painLocationinput.addEventListener("input", checkpainLocation);
-hairColorinput.addEventListener("input", checkhairColor);
-heardOfUsinput.addEventListener("input", checkheardOfUs);
-drinksPerWeekinput.addEventListener("input", checkdrinksPerWeek);
-userIdinput.addEventListener("input", checkuserId);
-passwordinput.addEventListener("input", checkpassword);
-password2input.addEventListener("input", checkpassword2);
+fnameInput.addEventListener("input", checkfname);
+mInitialInput.addEventListener("input", checkmInitial);
+lnameInput.addEventListener("input", checklname);
+dateOfBirthInput.addEventListener("input", checkdateOfBirth);
+socialSecurityInput.addEventListener("input", checksocialSecurity);
+addressLine1Input.addEventListener("input", checkaddressLine1);
+addressLine2Input.addEventListener("input", checkaddressLine2);
+cityInput.addEventListener("input", checkcity);
+stateInput.addEventListener("input", checkstate);
+zipcodeInput.addEventListener("input", checkzipcode);
+emailInput.addEventListener("input", checkemail);
+currentSymptomsInput.addEventListener("input", checkcurrentSymptoms);
+painLocationInput.addEventListener("input", checkpainLocation);
+hairColorInput.addEventListener("input", checkhairColor);
+heardOfUsInput.addEventListener("input", checkheardOfUs);
+drinksPerWeekInput.addEventListener("input", checkdrinksPerWeek);
+userIdInput.addEventListener("input", checkuserId);
+passwordInput.addEventListener("input", checkpassword);
+password2Input.addEventListener("input", checkpasswordmatch);
