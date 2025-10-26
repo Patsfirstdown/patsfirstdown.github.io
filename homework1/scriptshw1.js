@@ -2,7 +2,11 @@
 Oct-26-2025
 Javascript File*/
 
-const currentDate = new Date(year,month,date)
+const currentDate = new Date();
+const todayMonth = currentDate.getMonth() + 1; // +1 because getMonth() returns 0-11
+const todayDate = currentDate.getDate();
+const todayYear = currentDate.getFullYear();
+const formattedDate = todayMonth + '-' + todayDate + '-' + todayYear;
 
 const fnameInput = document.getElementById("fname");
 const mInitialInput = document.getElementById("mInitial");
@@ -253,23 +257,24 @@ document.addEventListener("DOMContentLoaded",()=>{
   drinksPerWeekInput.addEventListener("input",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
-});
 
-fnameInput.addEventListener("input", checkfname);
-mInitialInput.addEventListener("input", checkmInitial);
-lnameInput.addEventListener("input", checklname);
-dateOfBirthInput.addEventListener("input", checkdateOfBirth);
-socialSecurityInput.addEventListener("input", checksocialSecurity);
-addressLine1Input.addEventListener("input", checkaddressLine1);
-addressLine2Input.addEventListener("input", checkaddressLine2);
-cityInput.addEventListener("input", checkcity);
-stateInput.addEventListener("input", checkstate);
-zipcodeInput.addEventListener("input", checkzipcode);
-emailInput.addEventListener("input", checkemail);
-currentSymptomsInput.addEventListener("input", checkcurrentSymptoms);
-painLocationInput.addEventListener("input", checkpainLocation);
-hairColorInput.addEventListener("input", checkhairColor);
-heardOfUsInput.addEventListener("input", checkheardOfUs);
+  
+  fnameInput.addEventListener("input", checkfname);
+  mInitialInput.addEventListener("input", checkmInitial);
+  lnameInput.addEventListener("input", checklname);
+  dateOfBirthInput.addEventListener("input", checkdateOfBirth);
+  socialSecurityInput.addEventListener("input", checksocialSecurity);
+  addressLine1Input.addEventListener("input", checkaddressLine1);
+  addressLine2Input.addEventListener("input", checkaddressLine2);
+  cityInput.addEventListener("input", checkcity);
+  stateInput.addEventListener("input", checkstate);
+  zipcodeInput.addEventListener("input", checkzipcode);
+  emailInput.addEventListener("input", checkemail);
+  currentSymptomsInput.addEventListener("input", checkcurrentSymptoms);
+  painLocationInput.addEventListener("input", checkpainLocation);
+  hairColorInput.addEventListener("input", checkhairColor);
+  heardOfUsInput.addEventListener("input", checkheardOfUs);
+});
 drinksPerWeekInput.addEventListener("input", checkdrinksPerWeek);
 userIdInput.addEventListener("input", checkuserId);
 passwordInput.addEventListener("input", checkpassword);
