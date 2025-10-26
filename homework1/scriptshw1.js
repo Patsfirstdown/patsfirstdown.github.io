@@ -33,10 +33,10 @@ const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
 const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
 
 function lengthAllowed(Input,maxLength,minLength){
-  if(Input>maxLength){
+  if(Input.length>maxLength){
     return false
   }
-  else if(Input<minLength){
+  else if(Input.length<minLength){
     return false
   }
   else{
@@ -118,7 +118,7 @@ function checkaddressLine1(){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
-      document.getElementById("addressLine2Error").innerHTML="Allowed";
+      document.getElementById("addressLine1Error").innerHTML="Allowed";
     }
   }
 }
@@ -186,6 +186,9 @@ function checkemail(){
 function checkcurrentSymptoms(){
   if(currentSymptomsInput.value.includes('"')){
     document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
+  }
+  else{
+    document.getElementById("currentSymptomsError").innerHTML='ALLOWED';
   }
 }
   
