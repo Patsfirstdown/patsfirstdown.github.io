@@ -403,8 +403,9 @@ function userCanSubmit(){
   const userIdAllowed = checkuserId();
   const passwordAllowed = checkpassword();
   const password2Allowed = checkpasswordmatch();
+  const passwordUserId = !passwordInput.value.includes(userIdInput.value)
 
-  const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed;
+  const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed && passwordUserId;
   submit.disabled = !submitAllowed
 };
 
