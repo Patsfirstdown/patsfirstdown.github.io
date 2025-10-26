@@ -27,6 +27,7 @@ const drinksPerWeekInput = document.getElementById("drinksPerWeek");
 const userIdInput = document.getElementById("userId");
 const passwordInput = document.getElementById("password");
 const password2Input = document.getElementById("password2");
+const buttonPress = document.getElementById("showButton");x6
 
 const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
 const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
@@ -279,4 +280,49 @@ document.addEventListener("DOMContentLoaded",()=>{
   userIdInput.addEventListener("input", checkuserId);
   passwordInput.addEventListener("input", checkpassword);
   password2Input.addEventListener("input", checkpasswordmatch);
+
+  const showAllButton = document.getElementById("showButton");
+  const fname = document.getElementById("fname");
+  const mInitial = document.getElementById("mInitial");
+  const lname = document.getElementById("lname");
+  const dateOfBirth = document.getElementById("dateOfBirth");
+  const socialSecurity = document.getElementById("socialSecurity");
+  const addressLine1 = document.getElementById("addressLine1");
+  const addressLine2 = document.getElementById("addressLine2");
+  const city = document.getElementById("city");
+  const state = document.getElementById("state");
+  const zipcode = document.getElementById("zipcode");
+  const email = document.getElementById("email");
+  const currentSymptoms = document.getElementById("currentSymptoms");
+  const painLocation = document.getElementById("painLocation");
+  const hairColor = document.getElementById("hairColor");
+  const heardOfUs = document.getElementById("heardOfUs");
+  const drinksPerWeek = document.getElementById("drinksPerWeek");
+  const userId = document.getElementById("userId");
+  const password = document.getElementById("password");
+  const password2 = document.getElementById("password2");
+  
+  showAllButton.addEventListener("click",()=>{
+    fname.innerHTML=fnameInput.value;
+    mInitial.innerHTML=mInitialInput.value;
+    lname.innerHTML=lnameInput.value;
+    dateOfBirth.innerHTML=dateOfBirthInput.value;
+    socialSecurity.innerHTML=socialSecurityInput.value;
+    addressLine1.innerHTML=addressLine1Input.value;
+    addressLine2.innerHTML=addressLine2Input.value;
+    city.innerHTML=cityInput.value;
+    state.innerHTML=stateInput.value;
+    zipcode.innerHTML=zipcodeInput.value;
+    email.innerHTML=emailInput.value;
+    currentSymptoms.innerHTML=currentSymptomsInput.value;
+    painLocation.innerHTML=painLocationInput.value;
+    hairColor.innerHTML=hairColorInput.value;
+    heardOfUs.innerHTML=heardOfUsInput.value;
+    drinksPerWeek.innerHTML=drinksPerWeekInput.value;
+    userId.innerHTML=userIdInput.value;
+    password.innerHTML=passwordInput.value;
+    password2.innerHTML=password2Input.value;
+  });
 });
+
+
