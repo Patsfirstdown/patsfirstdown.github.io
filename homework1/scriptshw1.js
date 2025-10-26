@@ -281,28 +281,10 @@ document.addEventListener("DOMContentLoaded",()=>{
   password2Input.addEventListener("input", checkpasswordmatch);
 
   const showAllButton = document.getElementById("showButton");
-  const fname = document.getElementById("fname");
-  const mInitial = document.getElementById("mInitial");
-  const lname = document.getElementById("lname");
-  const dateOfBirth = document.getElementById("dateOfBirth");
-  const socialSecurity = document.getElementById("socialSecurity");
-  const addressLine1 = document.getElementById("addressLine1");
-  const addressLine2 = document.getElementById("addressLine2");
-  const city = document.getElementById("city");
-  const state = document.getElementById("state");
-  const zipcode = document.getElementById("zipcode");
-  const email = document.getElementById("email");
-  const currentSymptoms = document.getElementById("currentSymptoms");
-  const painLocation = document.getElementById("painLocation");
-  const hairColor = document.getElementById("hairColor");
-  const heardOfUs = document.getElementById("heardOfUs");
-  const drinksPerWeek = document.getElementById("drinksPerWeek");
-  const userId = document.getElementById("userId");
-  const password = document.getElementById("password");
-  const password2 = document.getElementById("password2");
+  const displayHERE = document.getElementById("displayHERE");
   
   showAllButton.addEventListener("click",()=>{
-    displayArea.innerHTML = `
+    displayHERE.innerHTML = `
     First Name: ${fnameInput.value}<br>
     Middle Initial: ${mInitialInput.value}<br>
     Last Name: ${lnameInput.value}<br>
@@ -317,6 +299,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     Current Symptoms: ${currentSymptomsInput.value}<br>
     Drinks Per Week: ${drinksPerWeekInput.value}<br>
     User ID: ${userIdInput.value}
+  });
 });
 
 
