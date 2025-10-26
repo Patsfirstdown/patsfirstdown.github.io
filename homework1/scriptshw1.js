@@ -278,7 +278,7 @@ function checkdrinksPerWeek(){
 function checkuserId(){
   if(userIdInput.value.length>0){
     if(userIdFormat.test(userIdInput.value)){
-      if(lengthAllowed(userIdInput.value,5,30)){
+      if(lengthAllowed(userIdInput.value,30,5)){
         document.getElementById("userIdError").innerHTML="";
         userCanSubmit()
         return true;
