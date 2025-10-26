@@ -4,38 +4,38 @@ Javascript File*/
 
 const currentDate = new Date(year,month,date)
 
-const fnameinput = document.getElementById("fname");
-const mInitialinput = document.getElementById("mInitial");
-const lnameinput = document.getElementById("name");
-const dateOfBirthinput = document.getElementById("dateOfBirth");
-const socialSecurityinput = document.getElementById("socialSecurity");
-const addressLine1input = document.getElementById("addressLine1");
-const addressLine2input = document.getElementById("addressLine2");
-const cityinput = document.getElementById("city");
-const stateinput = document.getElementById("state");
-const zipcodeinput = document.getElementById("zipcode");
-const emailinput = document.getElementById("email");
-const currentSymptomsinput = document.getElementById("currentSymptoms");
-const painLocationinput = document.getElementById("painLocation");
-const hairColorinput = document.getElementById("hairColor");
-const heardOfUsinput = document.getElementById("heardOfUs");
-const drinksPerWeekinput = document.getElementById("drinksPerWeek");
-const userIdinput = document.getElementById("userId");
-const passwordinput = document.getElementById("password");
-const password2input = document.getElementById("password2);
+const fnameInput = document.getElementById("fname");
+const mInitialInput = document.getElementById("mInitial");
+const lnameInput = document.getElementById("name");
+const dateOfBirthInput = document.getElementById("dateOfBirth");
+const socialSecurityInput = document.getElementById("socialSecurity");
+const addressLine1Input = document.getElementById("addressLine1");
+const addressLine2Input = document.getElementById("addressLine2");
+const cityInput = document.getElementById("city");
+const stateInput = document.getElementById("state");
+const zipcodeInput = document.getElementById("zipcode");
+const emailInput = document.getElementById("email");
+const currentSymptomsInput = document.getElementById("currentSymptoms");
+const painLocationInput = document.getElementById("painLocation");
+const hairColorInput = document.getElementById("hairColor");
+const heardOfUsInput = document.getElementById("heardOfUs");
+const drinksPerWeekInput = document.getElementById("drinksPerWeek");
+const userIdInput = document.getElementById("userId");
+const passwordInput = document.getElementById("password");
+const password2Input = document.getElementById("password2);
 
 const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
 const NumDashOnly = /^[123457890-]+(?: [123457890-]+)*$/;
 const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
 const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userIDFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
-const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z])
+const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z].+$/;
 
-function lengthAllowed(input,maxLength,minLength){
-  if(input.length>maxLength){
+function lengthAllowed(Input,maxLength,minLength)){
+  if(Input.length>maxLength){
     return False
   }
-  else if(input.length<minLength){
+  else if(Input.length<minLength){
     return True
   }
   else{
@@ -111,8 +111,8 @@ function checksocialSecurity(){
 
 function checkaddressLine1(){
   //no check needed
-  if(addressLine1Value.length>0){
-    if(lengthAllowed(addressLine1Value,30,2){
+  if(addressLine1Input.length>0){
+    if(lengthAllowed(addressLine1Input,30,2){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -123,7 +123,7 @@ function checkaddressLine1(){
 
 function checkaddressLine2(){
   //no check needed
-  if(addressLine2input.length>0){
+  if(addressLine2Input.length>0){
     if(lengthAllowed(addressLine2Value,30,2){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
@@ -134,7 +134,7 @@ function checkaddressLine2(){
 }
   
 function checkcity(){
-  if(cityinput.length>0){
+  if(cityInput.length>0){
     if(lengthAllowed(cityValue,30,2){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
@@ -145,7 +145,7 @@ function checkcity(){
 }
   
 function checkstate(){
-  if(stateinput=="ERRORBADNOEVILDONTDOTHISONE"){
+  if(stateInput=="ERRORBADNOEVILDONTDOTHISONE"){
     document.getElementById("stateError").innerHTML="NOT ALLOWED--Please Select a Valid Option";
   }
   else{
@@ -155,7 +155,7 @@ function checkstate(){
   
 function checkzipcode(){
   const zipcodeValue = zipcodeInput.value.trim();
-  if(zipcodeinput.length>0){
+  if(zipcodeInput.length>0){
     if(NumDashOnly.test(socialSecurityValue)){
       if(lengthAllowed(zipcodeValue,30,2){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
@@ -236,8 +236,15 @@ function checkpassword(){
 }
 
 function checkpasswordmatch(){
-  if(passwordInput==password2Input){
+  if(passwordInput.value!=password2Input.value){
     document.getElementById("password2Error").innerHTML="Passwords Don't match";
   }
 }
 
+document.addEventListener("DOMContentLoaded",()=>{
+  const dpwValue=document.getElementByID("dpwDisplay")
+
+  drinksPerWeekInput.addEventListener("Input",()=>{
+    dpwValue.textContent=drinksPerWeekInput.value;
+  });
+});
