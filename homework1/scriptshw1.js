@@ -85,13 +85,14 @@ function checklname(){
 }
   
 function checkdateOfBirth(){
+  const dob = new Date(dateOfBirthInput.value);
   const today = new Date();
   const old = today.setFullYear(today.getFullYear()+120)
   
-  if(dateOfBirthInput.value < today){
+  if(dob < today){
     document.getElementById("dOBError").innerHTML="Allowed";
   }
-  else if(dateOfBirthInput.value > old){
+  else if(dob > old){
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
   }
   else{
@@ -166,7 +167,7 @@ function checkzipcode(){
       }
     }
     else{
-      document.getElementById("socialSecurityError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
+      document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
     }
   }
 }
@@ -231,7 +232,7 @@ function checkpassword(){
       }
     }
     else{
-      document.getElementById("passwordFormatError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
+      document.getElementById("passwordFormatError").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
     }
   }
 }
@@ -244,7 +245,8 @@ function checkpasswordmatch(){
 
 document.addEventListener("DOMContentLoaded",()=>{
   const dpwValue=document.getElementById("dpwDisplay")
-
+  dpwValue.textContent=drinksPerWeekInput.value;
+  
   drinksPerWeekInput.addEventListener("input",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
