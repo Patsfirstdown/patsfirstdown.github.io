@@ -38,13 +38,13 @@ const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).
 
 function lengthAllowed(Input,maxLength,minLength){
   if(Input.length>maxLength){
-    return false
+    return false;
   }
   else if(Input.length<minLength){
-    return false
+    return false;
   }
   else{
-    return true
+    return true;
   }
 }
 
@@ -53,12 +53,18 @@ function checkfname(){
   if(fnameValue.length>0){
     if(!lengthAllowed(fnameValue,30,1)){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
+      userCanSubmit()
+      return false;
     }
     else if(letterApostDashChars.test(fnameValue)){
-      document.getElementById("fnameError").innerHTML="Allowed";
+      document.getElementById("fnameError").innerHTML="";
+      userCanSubmit()
+      return true;
     }
     else{
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, and Dashes only";
+      userCanSubmit()
+      return false;
     }
   }
 }
@@ -66,10 +72,14 @@ function checkfname(){
 function checkmInitial(){
   const mInitialValue = mInitialInput.value.trim();
   if(lettersOnly.test(mInitialValue)){
-    document.getElementById("mInitialError").innerHTML="Allowed";
+    document.getElementById("mInitialError").innerHTML="";
+    userCanSubmit()
+    return true;
   }
   else{
     document.getElementById("mInitialError").innerHTML="NOT ALLOWED--Letters only";
+    userCanSubmit()
+    return false;
   }
 }
   
@@ -78,12 +88,18 @@ function checklname(){
   if(lnameValue.length>0){
     if(!lengthAllowed(lnameValue,30,1)){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Too Long";
+      userCanSubmit()
+      return false;
     }
     else if(letterApostDashNumChars.test(lnameValue)){
-      document.getElementById("lnameError").innerHTML="Allowed";
+      document.getElementById("lnameError").innerHTML="";
+      userCanSubmit()
+      return true;
     }
     else{
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, 2-5, and Dashes only";
+      userCanSubmit()
+      return false;
     }
   }
 }
@@ -95,13 +111,19 @@ function checkdateOfBirth(){
   const old = oldDate.setFullYear(oldDate.getFullYear()-120)
   
   if(dob < today){
-    document.getElementById("dOBError").innerHTML="Allowed"+dob+today+(dob<today);
+    document.getElementById("dOBError").innerHTML="";
+    userCanSubmit()
+    return true;
   }
   else if(dob > old){
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
+    userCanSubmit()
+    return false;
   }
   else{
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be born already";
+    userCanSubmit()
+    return false;
   }
 }
 
@@ -109,10 +131,14 @@ function checksocialSecurity(){
   const socialSecurityValue = socialSecurityInput.value.trim();
   
   if(NumDashOnly.test(socialSecurityValue)){
-    document.getElementById("socialSecurityError").innerHTML="Allowed";
+    document.getElementById("socialSecurityError").innerHTML="";
+    userCanSubmit()
+    return true;
   }
   else{
     document.getElementById("socialSecurityError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
+    userCanSubmit()
+    return false;
   }
 }
 
@@ -121,9 +147,13 @@ function checkaddressLine1(){
   if(addressLine1Input.value.length>0){
     if(!lengthAllowed(addressLine1Input.value,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
+      userCanSubmit()
+      return false;
     }
     else{
-      document.getElementById("addressLine1Error").innerHTML="Allowed";
+      document.getElementById("addressLine1Error").innerHTML="";
+      userCanSubmit()
+      return true;
     }
   }
 }
@@ -133,9 +163,13 @@ function checkaddressLine2(){
   if(addressLine2Input.value.length>0){
     if(!lengthAllowed(addressLine2Input.value,30,2)){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
+      userCanSubmit()
+      return false;
     }
     else{
-      document.getElementById("addressLine2Error").innerHTML="Allowed";
+      document.getElementById("addressLine2Error").innerHTML="";
+      userCanSubmit()
+      return true;
     }
   }
 }
@@ -144,9 +178,13 @@ function checkcity(){
   if(cityInput.value.length>0){
     if(!lengthAllowed(cityInput.value,30,2)){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
+      userCanSubmit()
+      return false;
     }
     else{
-      document.getElementById("cityError").innerHTML="Allowed";
+      document.getElementById("cityError").innerHTML="";
+      userCanSubmit()
+      return true;
     }
   }
 }
@@ -154,9 +192,13 @@ function checkcity(){
 function checkstate(){
   if(stateInput.value=="ERRORBADNOEVILDONTDOTHISONE"){
     document.getElementById("stateError").innerHTML="NOT ALLOWED--Please Select a Valid Option";
+    userCanSubmit()
+    return false;
   }
   else{
-    document.getElementById("stateError").innerHTML="Allowed";
+    document.getElementById("stateError").innerHTML="";
+    userCanSubmit()
+    return true;
   }
 }
   
@@ -166,13 +208,19 @@ function checkzipcode(){
     if(NumDashOnly.test(zipcodeValue)){
       if(!lengthAllowed(zipcodeValue,30,2)){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
+        userCanSubmit()
+        return false;
       }
       else{
-        document.getElementById("zipcodeError").innerHTML="Allowed";
+        document.getElementById("zipcodeError").innerHTML="";
+        userCanSubmit()
+        return true;
       }
     }
     else{
       document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
+      userCanSubmit()
+      return false;
     }
   }
 }
@@ -180,10 +228,14 @@ function checkzipcode(){
 function checkemail(){
   if(emailInput.value.length>0){
     if(emailFormat.test(emailInput.value)){
-      document.getElementById("emailError").innerHTML="Allowed";
+      document.getElementById("emailError").innerHTML="";
+      userCanSubmit()
+      return true;
     }
     else{
       document.getElementById("emailError").innerHTML="NOT ALLOWED--Invalid Format";
+      userCanSubmit()
+    return false;
     }
   }
 }
@@ -191,25 +243,33 @@ function checkemail(){
 function checkcurrentSymptoms(){
   if(currentSymptomsInput.value.includes('"')){
     document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
+    userCanSubmit()
+    return false;
   }
   else{
-    document.getElementById("currentSymptomsError").innerHTML='ALLOWED';
+    document.getElementById("currentSymptomsError").innerHTML="";
+    userCanSubmit()
+    return true;
   }
 }
   
 function checkpainLocation(){
+  return true;
   //not needed right now
 }
   
 function checkhairColor(){
+  return true;
   //not needed right now
 }
   
 function checkheardOfUs(){
+  return true;
   //not needed right now
 }
   
 function checkdrinksPerWeek(){
+  return true;
   //not needed right now
 }
   
@@ -217,14 +277,20 @@ function checkuserId(){
   if(userIdInput.value.length>0){
     if(userIdFormat.test(userIdInput.value)){
       if(lengthAllowed(userIdInput.value,5,30)){
-         document.getElementById("userIdError").innerHTML="Allowed";
+        document.getElementById("userIdError").innerHTML="";
+        userCanSubmit()
+        return true;
       }
       else{
         document.getElementById("userIdError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters";
+        userCanSubmit()
+        return false;
       }
     }
     else{
       document.getElementById("userIdError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
+      userCanSubmit()
+      return false;
     }
   }
 }
@@ -233,14 +299,20 @@ function checkpassword(){
   if(passwordInput.value.length>0){
     if(passwordFormat.test(passwordInput.value)){
       if(lengthAllowed(passwordInput.value,30,8)){
-         document.getElementById("password1Error").innerHTML="Allowed";
+        document.getElementById("password1Error").innerHTML="";
+        userCanSubmit()
+        return true;
       }
       else{
         document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters";
+        userCanSubmit()
+        return false;
       }
     }
     else{
       document.getElementById("passwordFormatError").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
+      userCanSubmit()
+      return false;
     }
   }
 }
@@ -248,17 +320,25 @@ function checkpassword(){
 function checkpasswordmatch(){
   if(passwordInput.value!=password2Input.value){
     document.getElementById("password2Error").innerHTML="Passwords Don't match";
+    userCanSubmit()
+    return false;
+  }
+  else{
+    document.getElementById("password2Error").innerHTML="";
+    userCanSubmit()
+    return true;
   }
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
+  const submit = document.getElementById("submitButton");
+  submit.disabled = true;
   const dpwValue=document.getElementById("dpwDisplay")
   dpwValue.textContent=drinksPerWeekInput.value;
   
   drinksPerWeekInput.addEventListener("input",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
-
   
   fnameInput.addEventListener("input", checkfname);
   mInitialInput.addEventListener("input", checkmInitial);
@@ -299,8 +379,33 @@ document.addEventListener("DOMContentLoaded",()=>{
     Current Symptoms: ${currentSymptomsInput.value}<br>
     Drinks Per Week: ${drinksPerWeekInput.value}<br>
     User ID: ${userIdInput.value}
-    `};
+    `;
   });
 });
+
+function userCanSubmit(){
+  const fnameAllowed = checkfname();
+  const mInitialAllowed = checkmInitial();
+  const lnameAllowed = checklname();
+  const dateOfBirthAllowed = checkdateOfBirth();
+  const socialSecurityAllowed = checksocialSecurity();
+  const addressLine1Allowed = checkaddressLine1();
+  const addressLine2Allowed = checkaddressLine2();
+  const cityAllowed = checkcity();
+  const stateAllowed = checkstate();
+  const zipcodeAllowed = checkzipcode();
+  const emailAllowed = checkemail();
+  const currentSymptomsAllowed = checkcurrentSymptoms();
+  const painLocationAllowed = checkpainLocation();
+  const hairColorAllowed = checkhairColor();
+  const heardOfUsAllowed = checkheardOfUs();
+  const drinksPerWeekAllowed = checkdrinksPerWeek();
+  const userIdAllowed = checkuserId();
+  const passwordAllowed = checkpassword();
+  const password2Allowed = checkpasswordmatch();
+
+  const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed;
+  submit.disabled = !submitAllowed
+};
 
 
