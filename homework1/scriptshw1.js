@@ -25,17 +25,18 @@ const passwordInput = document.getElementById("password");
 const password2Input = document.getElementById("password2");
 
 const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
+const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
 const NumDashOnly = /^[123457890-]+(?: [123457890-]+)*$/;
 const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
 const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const userIDFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
+const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
 const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
 
 function lengthAllowed(Input,maxLength,minLength){
-  if(Input.length>maxLength){
+  if(Input.value.length>maxLength){
     return false
   }
-  else if(Input.length<minLength){
+  else if(Input.value.length<minLength){
     return false
   }
   else{
@@ -45,8 +46,8 @@ function lengthAllowed(Input,maxLength,minLength){
 
 function checkfname(){
   const fnameValue = fnameInput.value.trim();
-  if(fnameValue.value.length>0){
-    if(lengthAllowed(fnameValue,30,1)){
+  if(fnameValue.length>0){
+    if(!lengthAllowed(fnameValue,30,1)){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
     }
     else if(letterApostDashChars.test(fnameValue)){
@@ -70,8 +71,8 @@ function checkmInitial(){
   
 function checklname(){
   const lnameValue = lnameInput.value.trim();
-  if(lnameValue.value.length>0){
-    if(lengthAllowed(lnameValue,30,1)){
+  if(lnameValue.length>0){
+    if(!lengthAllowed(lnameValue,30,1)){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Too Long";
     }
     else if(letterApostDashNumChars.test(lnameValue)){
@@ -112,7 +113,7 @@ function checksocialSecurity(){
 function checkaddressLine1(){
   //no check needed
   if(addressLine1Input.value.length>0){
-    if(lengthAllowed(addressLine1Input,30,2)){
+    if(!lengthAllowed(addressLine1Input.value,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -123,8 +124,8 @@ function checkaddressLine1(){
 
 function checkaddressLine2(){
   //no check needed
-  if(addressLine2Input.length>0){
-    if(lengthAllowed(addressLine2Value,30,2)){
+  if(addressLine2Input.value.length>0){
+    if(!lengthAllowed(addressLine2Input.value,30,2)){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -134,8 +135,8 @@ function checkaddressLine2(){
 }
   
 function checkcity(){
-  if(cityInput.length>0){
-    if(lengthAllowed(cityValue,30,2)){
+  if(cityInput.value.length>0){
+    if(!lengthAllowed(cityInput.value,30,2)){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
     }
     else{
@@ -155,9 +156,9 @@ function checkstate(){
   
 function checkzipcode(){
   const zipcodeValue = zipcodeInput.value.trim();
-  if(zipcodeInput.length>0){
-    if(NumDashOnly.test(socialSecurityValue)){
-      if(lengthAllowed(zipcodeValue,30,2)){
+  if(zipcodeValue.length>0){
+    if(NumDashOnly.test(zipcodeValue)){
+      if(!lengthAllowed(zipcodeValue,30,2)){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
       }
       else{
@@ -171,8 +172,8 @@ function checkzipcode(){
 }
   
 function checkemail(){
-  if(emailInput.length>0){
-    if(emailFormat.test(emailInput)){
+  if(emailInput.value.length>0){
+    if(emailFormat.test(emailInput.value)){
       document.getElementById("emailError").innerHTML="Allowed";
     }
     else{
@@ -183,7 +184,7 @@ function checkemail(){
   
 function checkcurrentSymptoms(){
   if(currentSymptomsInput.includes('"')){
-    document.getElementById("emailError").innerHTML='NOT ALLOWED--" Is not allowed';
+    document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
   }
 }
   
@@ -204,25 +205,25 @@ function checkdrinksPerWeek(){
 }
   
 function checkuserId(){
-  if(userIDInput.length>0){
-    if(userIDFormat.test(userIDInput)){
-      if(lengthAllowed(userIDInput,5,30)){
-         document.getElementById("userIDError").innerHTML="Allowed";
+  if(userIdInput.value.length>0){
+    if(userIdFormat.test(userIdInput.value)){
+      if(lengthAllowed(userIdInput.value,5,30)){
+         document.getElementById("userIdError").innerHTML="Allowed";
       }
       else{
-        document.getElementById("userIDError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters")
+        document.getElementById("userIdError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters";
       }
     }
     else{
-      document.getElementById("userIDError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
+      document.getElementById("userIdError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
     }
   }
 }
   
 function checkpassword(){
-  if(passwordInput.length>0){
-    if(passwordFormat.test(passwordInput)){
-      if(lengthAllowed(passwordInput,8,30)){
+  if(passwordInput.value.length>0){
+    if(passwordFormat.test(passwordInput.value)){
+      if(lengthAllowed(passwordInput.value,8,30)){
          document.getElementById("password1Error").innerHTML="Allowed";
       }
       else{
