@@ -299,6 +299,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     Current Symptoms: ${currentSymptomsInput.value}<br>
     Drinks Per Week: ${drinksPerWeekInput.value}<br>
     User ID: ${userIdInput.value}
+    `};
   });
 });
 
