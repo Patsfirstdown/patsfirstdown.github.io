@@ -274,8 +274,8 @@ document.addEventListener("DOMContentLoaded",()=>{
   painLocationInput.addEventListener("input", checkpainLocation);
   hairColorInput.addEventListener("input", checkhairColor);
   heardOfUsInput.addEventListener("input", checkheardOfUs);
+  drinksPerWeekInput.addEventListener("input", checkdrinksPerWeek);
+  userIdInput.addEventListener("input", checkuserId);
+  passwordInput.addEventListener("input", checkpassword);
+  password2Input.addEventListener("input", checkpasswordmatch);
 });
-drinksPerWeekInput.addEventListener("input", checkdrinksPerWeek);
-userIdInput.addEventListener("input", checkuserId);
-passwordInput.addEventListener("input", checkpassword);
-password2Input.addEventListener("input", checkpasswordmatch);
