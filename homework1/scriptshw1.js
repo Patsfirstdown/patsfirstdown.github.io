@@ -27,7 +27,6 @@ const drinksPerWeekInput = document.getElementById("drinksPerWeek");
 const userIdInput = document.getElementById("userId");
 const passwordInput = document.getElementById("password");
 const password2Input = document.getElementById("password2");
-const buttonPress = document.getElementById("showButton");x6
 
 const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
 const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
@@ -303,26 +302,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   const password2 = document.getElementById("password2");
   
   showAllButton.addEventListener("click",()=>{
-    fname.innerHTML=fnameInput.value;
-    mInitial.innerHTML=mInitialInput.value;
-    lname.innerHTML=lnameInput.value;
-    dateOfBirth.innerHTML=dateOfBirthInput.value;
-    socialSecurity.innerHTML=socialSecurityInput.value;
-    addressLine1.innerHTML=addressLine1Input.value;
-    addressLine2.innerHTML=addressLine2Input.value;
-    city.innerHTML=cityInput.value;
-    state.innerHTML=stateInput.value;
-    zipcode.innerHTML=zipcodeInput.value;
-    email.innerHTML=emailInput.value;
-    currentSymptoms.innerHTML=currentSymptomsInput.value;
-    painLocation.innerHTML=painLocationInput.value;
-    hairColor.innerHTML=hairColorInput.value;
-    heardOfUs.innerHTML=heardOfUsInput.value;
-    drinksPerWeek.innerHTML=drinksPerWeekInput.value;
-    userId.innerHTML=userIdInput.value;
-    password.innerHTML=passwordInput.value;
-    password2.innerHTML=password2Input.value;
-  });
+    displayArea.innerHTML = `
+    First Name: ${fnameInput.value}<br>
+    Middle Initial: ${mInitialInput.value}<br>
+    Last Name: ${lnameInput.value}<br>
+    Date of Birth: ${dateOfBirthInput.value}<br>
+    Social Security: ${socialSecurityInput.value}<br>
+    Address Line 1: ${addressLine1Input.value}<br>
+    Address Line 2: ${addressLine2Input.value}<br>
+    City: ${cityInput.value}<br>
+    State: ${stateInput.value}<br>
+    Zipcode: ${zipcodeInput.value}<br>
+    Email: ${emailInput.value}<br>
+    Current Symptoms: ${currentSymptomsInput.value}<br>
+    Drinks Per Week: ${drinksPerWeekInput.value}<br>
+    User ID: ${userIdInput.value}
 });
 
 
