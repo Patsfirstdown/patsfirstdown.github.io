@@ -22,7 +22,7 @@ const heardOfUsInput = document.getElementById("heardOfUs");
 const drinksPerWeekInput = document.getElementById("drinksPerWeek");
 const userIdInput = document.getElementById("userId");
 const passwordInput = document.getElementById("password");
-const password2Input = document.getElementById("password2);
+const password2Input = document.getElementById("password2");
 
 const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
 const NumDashOnly = /^[123457890-]+(?: [123457890-]+)*$/;
@@ -248,3 +248,23 @@ document.addEventListener("DOMContentLoaded",()=>{
     dpwValue.textContent=drinksPerWeekInput.value;
   });
 });
+
+fname.addEventListener("input", checkfname);
+mInitial.addEventListener("input", checkmInitial);
+lname.addEventListener("input", checklname);
+dateOfBirth.addEventListener("input", checkdateOfBirth);
+socialSecurity.addEventListener("input", checksocialSecurity);
+addressLine1.addEventListener("input", checkaddressLine1);
+addressLine2.addEventListener("input", checkaddressLine2);
+city.addEventListener("input", checkcity);
+state.addEventListener("input", checkstate);
+zipcode.addEventListener("input", checkzipcode);
+email.addEventListener("input", checkemail);
+currentSymptoms.addEventListener("input", checkcurrentSymptoms);
+painLocation.addEventListener("input", checkpainLocation);
+hairColor.addEventListener("input", checkhairColor);
+heardOfUs.addEventListener("input", checkheardOfUs);
+drinksPerWeek.addEventListener("input", checkdrinksPerWeek);
+userId.addEventListener("input", checkuserId);
+password.addEventListener("input", checkpassword);
+password2.addEventListener("input", checkpasswordmatch);
