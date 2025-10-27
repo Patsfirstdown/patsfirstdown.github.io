@@ -55,17 +55,17 @@ function checkfname(){
   if(fnameValue.length>0){
     if(!lengthAllowed(fnameValue,30,1)){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
     else if(letterApostDashChars.test(fnameValue)){
       document.getElementById("fnameError").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
     else{
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, and Dashes only";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
   }
@@ -75,12 +75,12 @@ function checkmInitial(){
   const mInitialValue = mInitialInput.value.trim();
   if(lettersOnly.test(mInitialValue)){
     document.getElementById("mInitialError").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
   else{
     document.getElementById("mInitialError").innerHTML="NOT ALLOWED--Letters only";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
 }
@@ -90,17 +90,17 @@ function checklname(){
   if(lnameValue.length>0){
     if(!lengthAllowed(lnameValue,30,1)){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Too Long";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
     else if(letterApostDashNumChars.test(lnameValue)){
       document.getElementById("lnameError").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
     else{
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, 2-5, and Dashes only";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
   }
@@ -114,17 +114,17 @@ function checkdateOfBirth(){
   
   if(dob < today){
     document.getElementById("dOBError").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
   else if(dob > old){
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
   else{
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be born already";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
 }
@@ -134,12 +134,12 @@ function checksocialSecurity(){
   
   if(NumDashOnly.test(socialSecurityValue)){
     document.getElementById("socialSecurityError").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
   else{
     document.getElementById("socialSecurityError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
 }
@@ -149,12 +149,12 @@ function checkaddressLine1(){
   if(addressLine1Input.value.length>0){
     if(!lengthAllowed(addressLine1Input.value,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
     else{
       document.getElementById("addressLine1Error").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
   }
@@ -165,12 +165,12 @@ function checkaddressLine2(){
   if(addressLine2Input.value.length>0){
     if(!lengthAllowed(addressLine2Input.value,30,2)){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
     else{
       document.getElementById("addressLine2Error").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
   }
@@ -180,12 +180,12 @@ function checkcity(){
   if(cityInput.value.length>0){
     if(!lengthAllowed(cityInput.value,30,2)){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
     else{
       document.getElementById("cityError").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
   }
@@ -194,12 +194,12 @@ function checkcity(){
 function checkstate(){
   if(stateInput.value=="ERRORBADNOEVILDONTDOTHISONE"){
     document.getElementById("stateError").innerHTML="NOT ALLOWED--Please Select a Valid Option";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
   else{
     document.getElementById("stateError").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
 }
@@ -210,18 +210,18 @@ function checkzipcode(){
     if(NumDashOnly.test(zipcodeValue)){
       if(!lengthAllowed(zipcodeValue,30,2)){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
-        userCanSubmit()
+        //userCanSubmit()
         return false;
       }
       else{
         document.getElementById("zipcodeError").innerHTML="";
-        userCanSubmit()
+        //userCanSubmit()
         return true;
       }
     }
     else{
       document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
   }
@@ -231,12 +231,12 @@ function checkemail(){
   if(emailInput.value.length>0){
     if(emailFormat.test(emailInput.value)){
       document.getElementById("emailError").innerHTML="";
-      userCanSubmit()
+      //userCanSubmit()
       return true;
     }
     else{
       document.getElementById("emailError").innerHTML="NOT ALLOWED--Invalid Format";
-      userCanSubmit()
+      //userCanSubmit()
     return false;
     }
   }
@@ -245,12 +245,12 @@ function checkemail(){
 function checkcurrentSymptoms(){
   if(currentSymptomsInput.value.includes('"')){
     document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
   else{
     document.getElementById("currentSymptomsError").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
 }
@@ -280,18 +280,18 @@ function checkuserId(){
     if(userIdFormat.test(userIdInput.value)){
       if(lengthAllowed(userIdInput.value,30,5)){
         document.getElementById("userIdError").innerHTML="";
-        userCanSubmit()
+        //userCanSubmit()
         return true;
       }
       else{
         document.getElementById("userIdError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters";
-        userCanSubmit()
+        //userCanSubmit()
         return false;
       }
     }
     else{
       document.getElementById("userIdError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
   }
@@ -302,18 +302,18 @@ function checkpassword(){
     if(passwordFormat.test(passwordInput.value)){
       if(lengthAllowed(passwordInput.value,30,8)){
         document.getElementById("password1Error").innerHTML="";
-        userCanSubmit()
+        //userCanSubmit()
         return true;
       }
       else{
         document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters";
-        userCanSubmit()
+        //userCanSubmit()
         return false;
       }
     }
     else{
       document.getElementById("passwordFormatError").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
-      userCanSubmit()
+      //userCanSubmit()
       return false;
     }
   }
@@ -322,12 +322,12 @@ function checkpassword(){
 function checkpasswordmatch(){
   if(passwordInput.value!=password2Input.value){
     document.getElementById("password2Error").innerHTML="Passwords Don't match";
-    userCanSubmit()
+    //userCanSubmit()
     return false;
   }
   else{
     document.getElementById("password2Error").innerHTML="";
-    userCanSubmit()
+    //userCanSubmit()
     return true;
   }
 }
@@ -390,8 +390,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     `;
   });
 });
-
-function userCanSubmit(){
+/*
+function //userCanSubmit(){
   const fnameAllowed = checkfname();
   const mInitialAllowed = checkmInitial();
   const lnameAllowed = checklname();
@@ -416,5 +416,6 @@ function userCanSubmit(){
   const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed && passwordUserId;
   submit.disabled = !submitAllowed
 };
+*/
 
 
