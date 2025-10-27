@@ -30,7 +30,7 @@ const currentDate = new Date();
   
   const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
   const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
-  const NumDashOnly = /^[123457890-]+(?: [123457890-]+)*$/;
+  const NumDashOnly = /^[0-9-]+(?: [0-9-]+)*$/;
   const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
   const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
@@ -368,20 +368,25 @@ document.addEventListener("DOMContentLoaded",()=>{
   
   showAllButton.addEventListener("click",()=>{
     displayHERE.innerHTML = `
-    First Name: ${fnameInput.value}<br>
-    Middle Initial: ${mInitialInput.value}<br>
-    Last Name: ${lnameInput.value}<br>
-    Date of Birth: ${dateOfBirthInput.value}<br>
-    Social Security: ${socialSecurityInput.value}<br>
-    Address Line 1: ${addressLine1Input.value}<br>
-    Address Line 2: ${addressLine2Input.value}<br>
-    City: ${cityInput.value}<br>
-    State: ${stateInput.value}<br>
-    Zipcode: ${zipcodeInput.value}<br>
-    Email: ${emailInput.value}<br>
-    Current Symptoms: ${currentSymptomsInput.value}<br>
-    Drinks Per Week: ${drinksPerWeekInput.value}<br>
-    User ID: ${userIdInput.value}
+    fname: ${fnameInput.value}<br>
+    mInitial: ${mInitialInput.value}<br>
+    lname: ${lnameInput.value}<br>
+    dateOfBirth: ${dateOfBirthInput.value}<br>
+    socialSecurity: ${socialSecurityInput.value}<br>
+    addressLine1: ${addressLine1Input.value}<br>
+    addressLine2: ${addressLine2Input.value}<br>
+    city: ${cityInput.value}<br>
+    state: ${stateInput.value}<br>
+    zipcode: ${zipcodeInput.value}<br>
+    email: ${emailInput.value}<br>
+    currentSymptoms: ${currentSymptomsInput.value}<br>
+    painLocation: ${painLocationInput.value}<br>
+    hairColor: ${hairColorInput.value}<br>
+    heardOfUs: ${heardOfUsInput.value}<br>
+    drinksPerWeek: ${drinksPerWeekInput.value}<br>
+    userId: ${userIdInput.value}<br>
+    password: ${passwordInput.value}<br>
+    password2: ${password2Input.value}<br>
     `;
   });
 });
