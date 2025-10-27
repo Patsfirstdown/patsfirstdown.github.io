@@ -335,7 +335,7 @@ function checkpasswordmatch(){
 document.addEventListener("DOMContentLoaded",()=>{
   
   //const submit = document.getElementById("submitButton");
-  submit.disabled = true;
+  //submit.disabled = true;
   const dpwValue=document.getElementById("dpwDisplay")
   dpwValue.textContent=drinksPerWeekInput.value;
   
