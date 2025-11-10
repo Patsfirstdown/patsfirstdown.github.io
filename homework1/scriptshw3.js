@@ -395,8 +395,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   validButtonInput.addEventListener("click",()=>{
     userCanSubmit();
   });
-  
-  });
 });
 
 function userCanSubmit(){
