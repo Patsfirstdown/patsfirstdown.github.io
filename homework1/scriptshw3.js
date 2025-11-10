@@ -3,39 +3,39 @@ Nov-10-2025
 Javascript File*/
 
 const currentDate = new Date();
-  const todayMonth = currentDate.getMonth() + 1; // +1 because getMonth() returns 0-11
-  const todayDate = currentDate.getDate();
-  const todayYear = currentDate.getFullYear();
-  const formattedDate = todayMonth + '-' + todayDate + '-' + todayYear;
-  
-  const fnameInput = document.getElementById("fname");
-  const mInitialInput = document.getElementById("mInitial");
-  const lnameInput = document.getElementById("lname");
-  const dateOfBirthInput = document.getElementById("dateOfBirth");
-  const socialSecurityInput = document.getElementById("socialSecurity");
-  const addressLine1Input = document.getElementById("addressLine1");
-  const addressLine2Input = document.getElementById("addressLine2");
-  const cityInput = document.getElementById("city");
-  const stateInput = document.getElementById("state");
-  const zipcodeInput = document.getElementById("zipcode");
-  const emailInput = document.getElementById("email");
-  const currentSymptomsInput = document.getElementById("currentSymptoms");
-  const painLocationInput = document.getElementById("painLocation");
-  const hairColorInput = document.getElementById("hairColor");
-  const heardOfUsInput = document.getElementById("heardOfUs");
-  const drinksPerWeekInput = document.getElementById("drinksPerWeek");
-  const userIdInput = document.getElementById("userId");
-  const passwordInput = document.getElementById("password");
-  const password2Input = document.getElementById("password2");
-  const validButtonInput = document.getElementById("validButton");
-  
-  const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
-  const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
-  const NumDashOnly = /^[0-9-]+(?: [0-9-]+)*$/;
-  const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-  const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
-  const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
+const todayMonth = currentDate.getMonth() + 1; // +1 because getMonth() returns 0-11
+const todayDate = currentDate.getDate();
+const todayYear = currentDate.getFullYear();
+const formattedDate = todayMonth + '-' + todayDate + '-' + todayYear;
+
+const fnameInput = document.getElementById("fname");
+const mInitialInput = document.getElementById("mInitial");
+const lnameInput = document.getElementById("lname");
+const dateOfBirthInput = document.getElementById("dateOfBirth");
+const socialSecurityInput = document.getElementById("socialSecurity");
+const addressLine1Input = document.getElementById("addressLine1");
+const addressLine2Input = document.getElementById("addressLine2");
+const cityInput = document.getElementById("city");
+const stateInput = document.getElementById("state");
+const zipcodeInput = document.getElementById("zipcode");
+const emailInput = document.getElementById("email");
+const currentSymptomsInput = document.getElementById("currentSymptoms");
+const painLocationInput = document.getElementById("painLocation");
+const hairColorInput = document.getElementById("hairColor");
+const heardOfUsInput = document.getElementById("heardOfUs");
+const drinksPerWeekInput = document.getElementById("drinksPerWeek");
+const userIdInput = document.getElementById("userId");
+const passwordInput = document.getElementById("password");
+const password2Input = document.getElementById("password2");
+const validButtonInput = document.getElementById("validButton");
+
+const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
+const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
+const NumDashOnly = /^[0-9-]+(?: [0-9-]+)*$/;
+const lettersOnly = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
+const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
   
 
 
@@ -422,6 +422,14 @@ function userCanSubmit(){
   const passwordUserId = !passwordInput.value.includes(userIdInput.value)
 
   const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed && passwordUserId;
-  submit.disabled = !submitAllowed
+  submit.disabled = !submitAllowed;
+  if(submitAllowed){
+      document.getElementById("validTxt").innerHTML="";
+    }
+    else{
+      document.getElementById("validTxt").innerHTML="NOT ALLOWED--1 or more checks failed";
+    }
+
+  }
 };
 
