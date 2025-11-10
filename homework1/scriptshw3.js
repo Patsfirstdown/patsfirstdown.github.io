@@ -27,6 +27,7 @@ const currentDate = new Date();
   const userIdInput = document.getElementById("userId");
   const passwordInput = document.getElementById("password");
   const password2Input = document.getElementById("password2");
+  const validButtonInput = document.getElementById("validButton");
   
   const letterApostDashChars = /^[A-Za-z'’-]+(?: [A-Za-z'’-]+)*$/;
   const letterApostDashNumChars = /^[A-Za-z'’\-0-9]+(?: [A-Za-z'’\-0-9]+)*$/;
@@ -35,7 +36,7 @@ const currentDate = new Date();
   const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const userIdFormat = /^[A-Za-z1234567890_-]+[A-Za-z1234567890_-]+$/;
   const passwordFormat = /^(?=.*[0-9])(?=.*[!@#%^&*()-_+=\/><.,`~])(?=.*[A-Za-z]).+$/;
-
+  
 
 
 function lengthAllowed(Input,maxLength,minLength){
@@ -362,6 +363,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   userIdInput.addEventListener("input", checkuserId);
   passwordInput.addEventListener("input", checkpassword);
   password2Input.addEventListener("input", checkpasswordmatch);
+  
 
   const showAllButton = document.getElementById("showButton");
   const displayHERE = document.getElementById("displayHERE");
@@ -389,9 +391,15 @@ document.addEventListener("DOMContentLoaded",()=>{
     password2: ${password2Input.value}<br>
     `;
   });
+
+  validButtonInput.addEventListener("click",()=>{
+    userCanSubmit();
+  });
+  
+  });
 });
-/*
-function //userCanSubmit(){
+
+function userCanSubmit(){
   const fnameAllowed = checkfname();
   const mInitialAllowed = checkmInitial();
   const lnameAllowed = checklname();
@@ -416,4 +424,4 @@ function //userCanSubmit(){
   const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed && passwordUserId;
   submit.disabled = !submitAllowed
 };
-*/
+
