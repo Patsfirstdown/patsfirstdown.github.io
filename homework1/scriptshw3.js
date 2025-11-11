@@ -314,7 +314,7 @@ function checkpassword(){
       }
     }
     else{
-      document.getElementById("passwordFormatError").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
+      document.getElementById("password1Error").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
       //userCanSubmit()
       return false;
     }
