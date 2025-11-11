@@ -423,26 +423,26 @@ function userCanSubmit(){
 
   const submitAllowed = fnameAllowed && mInitialAllowed && lnameAllowed && dateOfBirthAllowed && socialSecurityAllowed && addressLine1Allowed && addressLine2Allowed && cityAllowed && stateAllowed && zipcodeAllowed && emailAllowed && currentSymptomsAllowed && painLocationAllowed && hairColorAllowed && heardOfUsAllowed && drinksPerWeekAllowed && userIdAllowed && passwordAllowed && password2Allowed && passwordUserId;
   submit.disabled = !submitAllowed;
-  if (fnameAllowed){errorMessage.push("fnameAllowed Failed");}
-  if (mInitialAllowed){errorMessage.push("mInitialAllowed Failed");}
-  if (currentSymptomsAllowed){errorMessage.push("currentSymptomsAllowed Failed");}
-  if (painLocationAllowed){errorMessage.push("painLocationAllowed Failed");}
-  if (hairColorAllowed){errorMessage.push("hairColorAllowed Failed");}
-  if (heardOfUsAllowed){errorMessage.push("heardOfUsAllowed Failed");}
-  if (drinksPerWeekAllowed){errorMessage.push("drinksPerWeekAllowed Failed");}
-  if (userIdAllowed){errorMessage.push("userIdAllowed Failed");}
-  if (passwordAllowed){errorMessage.push("passwordAllowed Failed");}
-  if (password2Allowed){errorMessage.push("password2Allowed Failed");}
-  if (passwordUserId){errorMessage.push("passwordUserId Failed");}
-  if (lnameAllowed){errorMessage.push("lnameAllowed Failed");}
-  if (dateOfBirthAllowed){errorMessage.push("dateOfBirthAllowed Failed");}
-  if (socialSecurityAllowed){errorMessage.push("socialSecurityAllowed Failed");}
-  if (addressLine1Allowed){errorMessage.push("addressLine1Allowed Failed");}
-  if (addressLine2Allowed){errorMessage.push("addressLine2Allowed Failed");}
-  if (cityAllowed){errorMessage.push("cityAllowed Failed");}
-  if (stateAllowed){errorMessage.push("stateAllowed Failed");}
-  if (zipcodeAllowed){errorMessage.push("zipcodeAllowed Failed");}
-  if (emailAllowed){errorMessage.push("emailAllowed Failed");}
+  if (!fnameAllowed){errorMessage.push("fnameAllowed Failed");}
+  if (!mInitialAllowed){errorMessage.push("mInitialAllowed Failed");}
+  if (!currentSymptomsAllowed){errorMessage.push("currentSymptomsAllowed Failed");}
+  if (!painLocationAllowed){errorMessage.push("painLocationAllowed Failed");}
+  if (!hairColorAllowed){errorMessage.push("hairColorAllowed Failed");}
+  if (!heardOfUsAllowed){errorMessage.push("heardOfUsAllowed Failed");}
+  if (!drinksPerWeekAllowed){errorMessage.push("drinksPerWeekAllowed Failed");}
+  if (!userIdAllowed){errorMessage.push("userIdAllowed Failed");}
+  if (!passwordAllowed){errorMessage.push("passwordAllowed Failed");}
+  if (!password2Allowed){errorMessage.push("password2Allowed Failed");}
+  if (!passwordUserId){errorMessage.push("passwordUserId Failed");}
+  if (!lnameAllowed){errorMessage.push("lnameAllowed Failed");}
+  if (!dateOfBirthAllowed){errorMessage.push("dateOfBirthAllowed Failed");}
+  if (!socialSecurityAllowed){errorMessage.push("socialSecurityAllowed Failed");}
+  if (!addressLine1Allowed){errorMessage.push("addressLine1Allowed Failed");}
+  if (!addressLine2Allowed){errorMessage.push("addressLine2Allowed Failed");}
+  if (!cityAllowed){errorMessage.push("cityAllowed Failed");}
+  if (!stateAllowed){errorMessage.push("stateAllowed Failed");}
+  if (!zipcodeAllowed){errorMessage.push("zipcodeAllowed Failed");}
+  if (!emailAllowed){errorMessage.push("emailAllowed Failed");}
   
   
   if(submitAllowed){
