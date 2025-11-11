@@ -7,6 +7,7 @@ const todayMonth = currentDate.getMonth() + 1; // +1 because getMonth() returns 
 const todayDate = currentDate.getDate();
 const todayYear = currentDate.getFullYear();
 const formattedDate = todayMonth + '-' + todayDate + '-' + todayYear;
+const submit = document.getElementById("submitButton");
 
 const fnameInput = document.getElementById("fname");
 const mInitialInput = document.getElementById("mInitial");
@@ -335,7 +336,7 @@ function checkpasswordmatch(){
 
 document.addEventListener("DOMContentLoaded",()=>{
   
-  const submit = document.getElementById("submitButton");
+  
   submit.disabled = true;
   const dpwValue=document.getElementById("dpwDisplay")
   dpwValue.textContent=drinksPerWeekInput.value;
