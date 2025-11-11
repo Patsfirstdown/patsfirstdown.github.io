@@ -427,7 +427,5 @@ function userCanSubmit(){
     else{
       document.getElementById("validTxt").innerHTML="NOT ALLOWED--1 or more checks failed";
     }
-
-  }
 };
 
