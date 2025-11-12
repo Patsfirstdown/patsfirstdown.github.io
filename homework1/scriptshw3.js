@@ -112,15 +112,15 @@ function checkdateOfBirth(){
   const dob = new Date(dateOfBirthInput.value);
   const today = new Date();
   const oldDate = new Date();
-  const old = oldDate.setFullYear(oldDate.getFullYear()-120)
+  oldDate.setFullYear(oldDate.getFullYear()-120)
   
   if(dob < today){
     document.getElementById("dOBError").innerHTML="";
     //userCanSubmit()
     return true;
   }
-  else if(dob > old){
-    document.getElementById("dOBError").innerHTML=old;
+  else if(dob < oldDate){
+    document.getElementById("dOBError").innerHTML=oldDate;
     //document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
     //userCanSubmit()
     return false;
