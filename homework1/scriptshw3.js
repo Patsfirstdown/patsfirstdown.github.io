@@ -125,7 +125,7 @@ function checkdateOfBirth(){
     //userCanSubmit()
     return true;
   }
-  else if(dob < oldDate){
+  else if(dob > oldDate){
     //document.getElementById("dOBError").innerHTML=oldDate;
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
     //userCanSubmit()
