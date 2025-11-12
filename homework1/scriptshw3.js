@@ -120,8 +120,8 @@ function checkdateOfBirth(){
     return true;
   }
   else if(dob < oldDate){
-    document.getElementById("dOBError").innerHTML=oldDate;
-    //document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
+    //document.getElementById("dOBError").innerHTML=oldDate;
+    document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
     //userCanSubmit()
     return false;
   }
