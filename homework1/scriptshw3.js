@@ -177,6 +177,9 @@ function checkaddressLine2(){
       return true;
     }
   }
+  else{
+    return true
+  }
 }
   
 function checkcity(){
