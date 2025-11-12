@@ -453,7 +453,7 @@ function userCanSubmit(){
       document.getElementById("validTxt").innerHTML="";
     }
     else{
-      document.getElementById("validTxt").innerHTML=errorMessage.toString();
+      document.getElementById("validTxt").innerHTML=errorMessage.join('<br>');
     }
 };
 
