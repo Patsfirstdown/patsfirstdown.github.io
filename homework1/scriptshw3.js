@@ -75,6 +75,9 @@ function checkfname(){
 
 function checkmInitial(){
   const mInitialValue = mInitialInput.value.trim();
+  if(mInitialValue.length()=0){
+    return true
+  }
   if(lettersOnly.test(mInitialValue)){
     document.getElementById("mInitialError").innerHTML="";
     //userCanSubmit()
