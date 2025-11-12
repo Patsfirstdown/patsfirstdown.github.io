@@ -75,18 +75,21 @@ function checkfname(){
 
 function checkmInitial(){
   const mInitialValue = mInitialInput.value.trim();
-  if(mInitialValue.length()=0){
-    return true
-  }
-  if(lettersOnly.test(mInitialValue)){
-    document.getElementById("mInitialError").innerHTML="";
-    //userCanSubmit()
-    return true;
+  if(mInitialValue.length>0){
+
+    if(lettersOnly.test(mInitialValue)){
+      document.getElementById("mInitialError").innerHTML="";
+      //userCanSubmit()
+      return true;
+    }
+    else{
+      document.getElementById("mInitialError").innerHTML="NOT ALLOWED--Letters only";
+      //userCanSubmit()
+      return false;
+    }
   }
   else{
-    document.getElementById("mInitialError").innerHTML="NOT ALLOWED--Letters only";
-    //userCanSubmit()
-    return false;
+    return true
   }
 }
   
