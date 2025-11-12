@@ -42,3 +42,8 @@ table.footer, tr.footer, td.footer{
     padding-left: 0px;
     color: white;
 }
+
+.limWidth {
+  max-width: 200px;
+}
+
