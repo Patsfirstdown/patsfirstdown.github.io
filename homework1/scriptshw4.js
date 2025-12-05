@@ -481,6 +481,60 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
 });
-  
+
+
+/*Just using the cookie functions from w3schools. No need to reinvent the wheel here*/
+function setCookie(fNamevalue) {
+  const d = new Date();
+  d.setTime(d.getTime() + (2*86400000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = "fName=" + fNamevalue + ";" + expires + ";path=/";
+}
+
+function getCookie(fName) {
+  let name = fName + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function deleteCookie(fName) {
+  document.cookie = "fName=" + fName + "; expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+}
+
+function newUser(fname) {
+  deleteCookie(fname)
+ }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fNameCookie = getCookie("fName");
+  const welcomeMessage = document.getElementById("HelloWorld");
+  const newUserButton = document.getElementById("newUserButton");
+
+  if(fNameCookie) {
+    welcomeMessage.innerHTML = "Welcome Back " + fNameCookie;
+
+    newUserButton.addEventListener("click",()=>{
+      newUser(fNameCookie);
+    });
+  } else {
+    welcomeMessage.innerHTML = "Welcome New User";
+  }
+});
+
+                                  
+
+
+
 
 
