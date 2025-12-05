@@ -1,0 +1,495 @@
+<!doctype html>
+<!--
+Program name: patient-form.html
+Author: Jayden Pickin 
+Date created: 10/26/20205
+Date last edited: 12/05/2025
+Version: 1.5
+Description: This is a patient intake form.
+-->
+<html>
+    <head>
+        <title>Patient Intake Form</title>
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="stylehw4.css">
+    </head>
+
+    <body>
+        <!--
+        header banner with image
+        -->
+        <div>
+            <table class="form">
+                <tbody>
+                    <tr class="form">
+                        <td>
+                            <img src="slogan.jpg" alt="thinkDifferent" style="width:auto;height:100%;">
+                        </td>
+                        <td>
+                            <h1><br><strong>Redline Medical<br></h1>
+                        </td>
+                        <td>
+                            <p id="dateToday"></p>
+                            <script>
+                                const d = new Date();
+                                const dateToday = d.getMonth()+1+'/'+d.getDate()+'/'+d.getFullYear();
+                                document.getElementById("dateToday").innerHTML = dateToday;
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <table>
+                <h2>Patient Intake Form</h2>
+                <form action="thanksyouhw1.html">
+                    <!--
+                    Overall form
+                    Read names for what it is an input for
+                    -->
+                    <tr>
+                        <th align="right" style="font-family:Tahoma;">Requested Information</th>
+                        <th align="left" style="font-family:Tahoma;">Input</th>
+                        <th align="center" style="font-family:Tacoma"></th>
+                    </tr>
+                    <tr>
+                        <!--
+                        enter first name in text box with width long enough to cover 30 chars
+                        is required
+                        -->
+                        <td align="Right">First Name</td>
+                        <td> 
+                            <input type="text" style="width:200px" id="fname" name="fname" maxlength="30" placeholder="Max" required>
+                        </td>
+                        <td>
+                            <span type="error" id="fnameError"></span>
+                        </td>
+                    <tr>
+                        <!--
+                        enter middle initial in text box with width long enough to cover the char
+                        is NOT required
+                        -->
+                        <td align="Right">Middle Initial</td>
+                        <td>
+                                <label for="mInitial"></label>
+                                <input type="text" id="mInitial" name="mInitial" style="width:12px" maxlength="1" placeholder="E"><br>
+                        </td>
+                        <td>
+                            <span type="error" id="mInitialError"></span>
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <!--
+                        enter last name in text box with width long enough to cover 30 chars
+                        is required
+                        -->
+                        <td align="Right">Last Name</td>
+                        <td>
+                            <label for="lname"></label>
+                            <input type="text" id="lname" name="lname"style="width:200px" maxlength="30" placeholder="Verstappen" required><br>
+                        </td>
+                        <td>
+                            <span type="error" id="lnameError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--
+                        Date of birth box
+                        No real age limit(I don't think anybody doesn't exist in that range?)
+                        -->
+                        <td align="Right"><br>Date of Birth</td>
+                        <td>
+                            <br>
+                            <label for="dateOfBirth"></label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" min='1776-04-06' max="dateToday" required><br>
+                        </td>
+                        <td>
+                            <span type="error" id="dOBError"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <!--
+                        Social Security number and is hidden with type="password"
+                        -->
+                        <td align="Right"><br>Social Security Number</td>
+                        <td>
+                            <br>
+                            <label for="socialSecurity"></label>
+                            <input type="password" id="socialSecurity" name="socialSecurity"style="width:100px" maxlength="11" placeholder="111-11-1111" required><br>
+                        </td>
+                        <td>
+                            <span type="error" id="socialSecurityError"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <!--
+                        this area is for address
+                        -->
+                        <td align="right"><br>Address Line 1</td>
+                        <td>
+                            <br>
+                            <label for="addressLine1"></label>
+                            <input type="text" id="addressLine1" name="addressLine1" style="width:200px" maxlength="30" placeholder="1 Victory Lane" required><br>
+                        </td>
+                        <td>
+                            <span type="error" id="addressLine1Error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right">Address Line 2</td>
+                        <td>
+                            <label for="addressLine2"></label>
+                            <input type="text" id="addressLine2" name="addressLine2" style="width:200px" maxlength="30"><br>
+                        </td>
+                        <td>
+                            <span type="error" id="addressLine2Error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right">City</td>
+                        <td>
+                            <label for="city"></label><br>
+                            <input type="text" id="city" name="city" style="width:200px" maxlength="30" placeholder="Abu Dhabi" required>
+                        </td>
+                        <td>
+                            <span type="error" id="cityError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right">State</td>
+                        <td>
+                            <!--
+                            State list
+                            -->
+                            <label for="state"></label>
+                            <select id="state" name="state" required>
+                                <option value="ERRORBADNOEVILDONTDOTHISONE">Please Select State</option>
+                                <option value="AL">AL</option>
+                                <option value="AK">AK</option>
+                                <option value="AS">AS</option>
+                                <option value="AZ">AZ</option>
+                                <option value="AR">AR</option>
+                                <option value="CA">CA</option>
+                                <option value="CO">CO</option>
+                                <option value="CT">CT</option>
+                                <option value="DE">DE</option>
+                                <option value="DC">DC</option>
+                                <option value="FL">FL</option>
+                                <option value="GA">GA</option>
+                                <option value="GU">GU</option>
+                                <option value="HI">HI</option>
+                                <option value="ID">ID</option>
+                                <option value="IL">IL</option>
+                                <option value="IN">IN</option>
+                                <option value="IA">IA</option>
+                                <option value="KS">KS</option>
+                                <option value="KY">KY</option>
+                                <option value="LA">LA</option>
+                                <option value="ME">ME</option>
+                                <option value="MD">MD</option>
+                                <option value="MA">MA</option>
+                                <option value="MI">MI</option>
+                                <option value="MN">MN</option>
+                                <option value="MS">MS</option>
+                                <option value="MO">MO</option>
+                                <option value="MT">MT</option>
+                                <option value="NE">NE</option>
+                                <option value="NV">NV</option>
+                                <option value="NH">NH</option>
+                                <option value="NJ">NJ</option>
+                                <option value="NM">NM</option>
+                                <option value="NY">NY</option>
+                                <option value="NC">NC</option>
+                                <option value="ND">ND</option>
+                                <option value="MP">MP</option>
+                                <option value="OH">OH</option>
+                                <option value="OK">OK</option>
+                                <option value="OR">OR</option>
+                                <option value="PA">PA</option>
+                                <option value="PR">PR</option>
+                                <option value="RI">RI</option>
+                                <option value="SC">SC</option>
+                                <option value="SD">SD</option>
+                                <option value="TN">TN</option>
+                                <option value="TX">TX</option>
+                                <option value="UT">UT</option>
+                                <option value="VT">VT</option>
+                                <option value="VA">VA</option>
+                                <option value="VI">VI</option>
+                                <option value="WA">WA</option>
+                                <option value="WV">WV</option>
+                                <option value="WI">WI</option>
+                                <option value="WY">WY</option>
+                        </td>
+                        <td>
+                            <span type="error" id="stateError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right">Zipcode</td>
+                        <!--
+                        Got bored of formal commments
+                        this is not a formal document
+                        hopefully nobody uses this code as important beyond class
+                        which is important
+                        but not needing super formal
+                        -->
+                        <!--
+                        SO here is zipcode
+                        enter zipcode
+                        the place holder is Max's wins(67) WDC(4) Poles(44) to maintain the consistent them of the form
+                        *stats as of after Baku
+                        -->
+                        <td>
+                            <label for="zipcode"></label><br>
+                            <input type="text" id="zipcode" name="zipcode" style="width:100px" maxlength="10" placeholder="67444" required>
+                        </td>
+                        <td>
+                            <span type="error" id="zipcodeError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--
+                        email so they can spam you(this is not saved(I haven't figured that out yet(don't enter your email though to be safe)))
+                        -->
+                        <td align="Right"><br>Email</td>
+                        <td>
+                            <br>
+                            <label for="email"></label><br>
+                            <input type="email" id="email" name="email" placeholder="Max@verstappen.com" required>
+                        </td>
+                        <td>
+                            <span type="error" id="emailError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--
+                        BIG OL TEXT BOX FOR USERS TO ENTER THEIR "SYMPTOMS"
+                        -->
+                        <td align="Right" style="vertical-align: top"><br>Current Symptoms</td>
+                        <td>
+                            <br>
+                            <label for="currentSymptoms"></label>
+                            <textarea type="text" cols="40" rows="5" id="currentSymptoms" name="currentSymptoms"style="height:250px">Input Symptoms Here</textarea>
+                        </td>
+                        <td>
+                            <span type="error" id="currentSymptomsError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br>Problem Location</td>
+                        <td>
+                            <!--
+                            BUTTONS!
+                            -->
+                            <br>
+                            <input type="checkbox" id="painLocation" name="painLocation1">
+                            <label for="painLocation1">Head</label><br>
+                            <input type="checkbox" id="painLocation" name="painLocation2">
+                            <label for="painLocation2">Torso</label><br>
+                            <input type="checkbox" id="painLocation" name="painLocation3">
+                            <label for="painLocation3">Limb(s)</label><br>
+                            <input type="checkbox" id="painLocation" name="painLocation3">
+                            <label for="painLocation3">None</label><br>
+                        </td>
+                        <td>
+                            <span type="error" id="painLocationError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br>Natural Hair Color</td>
+                        <td>
+                            <!--
+                            MORE BUTTONS!
+                            -->
+                            <!--
+                            Also is important because of the MC1R gene that can effect anestheicai(the knockout meds) so medically important
+                            Fun fact for you
+                            -->
+                            <br>
+                            <input type="radio" id="hairColor" name="hairColor" required>
+                            <label for="hairColor1">Red</label>
+                            <input type="radio" id="hairColor" name="hairColor">
+                            <label for="hairColor2">Not Red</label>
+                        </td>
+                        <td>
+                            <span type="error" id="hairColorError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br>How did you hear about us</td>
+                        <td>
+                            <!--
+                            EVEN MORE BUTTONS
+                            -->
+                            <br>
+                            <input type="radio" id="heardOfUs" name="heardOfUs" required>
+                            <label for="heardOfUs1">Online</label><br>
+                            <input type="radio" id="heardOfUs" name="heardOfUs">
+                            <label for="heardOfUs2">Physical Ad</label><br>
+                            <input type="radio" id="heardOfUs" name="heardOfUs">
+                            <label for="heardOfUs3">Saw Our Office</label><br>
+                            <input type="radio" id="heardOfUs" name="heardOfUs">
+                            <label for="heardOfUs4">Referral</label><br>
+                            <input type="radio" id="heardOfUs" name="heardOfUs">
+                            <label for="heardOfUs5">Who are you???</label><br>
+                        </td>
+                        <td>
+                            <span type="error" id="heardOfUsError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br>How many drinks do<br>you consume per week</td>
+                        <td>
+                            <br>
+                            <!--
+                            PERFECT SLIDER!! CANNOT BE IMPROVED! ANYONE WHO DISAGREES IS LYING
+                            or doesn't know what a perfect slider looks like
+                            Should have this on google as example of great slider
+                            -->
+                            <input type="range" min="0" max="210" value="105" class="slider" id="drinksPerWeek">
+                            <span id="dpwDisplay"></span>
+                        </td>
+                        <td>
+                            <span type="error" id="drinksPerWeekError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br><br>Create User ID</td>
+                        <td>
+                            <!--
+                            Create login
+                            for security limiting length
+                            -->
+                            <br><br>
+                            <label for="userId"></label>
+                            <input type="text" id="userId" name="userId" minlength="5" maxlength="20" placeholder="5xWorldChampionMV1" required>
+                        </td>
+                        <td>
+                            <span type="error" id="userIdError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right"><br>Create Password</td>
+                        <td>
+                            <!--
+                            password
+                            -->
+                            <br>
+                            <label for="password"></label>
+                            <input type="password" id="password" name="password" minlength="8" required>
+                        </td>
+                        <td>
+                            <span type="error" id="password1Error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="Right">Re-Enter Password</td>
+                        <td>
+                            <!--
+                            password again!
+                            -->
+                            <label for="password"></label>
+                            <input type="password" id="password2" name="password" minlength="8" required>
+                        </td>
+                        <td>
+                            <span type="error" id="password2Error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="limWidth">
+                            <br>
+                            <!--
+                            new button to validate
+                            -->
+                            <button id="validButton" type="button">Valid?</button>
+                            <br>
+                            <span type="error" id="validTxt"></span><br>
+                            <br>
+                        </td>
+                        <td vertical-align="top">
+                            <br>
+                            <!--
+                            submit button!
+                            -->
+                            <input id="submitButton" type="submit" value="Submit" align="right">
+                            <br>
+                            <br>
+                            <br>
+                        </td>
+                        <td vertical-align="top">
+                            <br>
+                            <!--
+                            its a trap!
+                            -->
+                            <button onclick="patsfirstdown.github.io/homework1/homework3.html" type="button">CLEAR AND START OVER</button>
+                            <br>
+                            <br>
+                            <br>
+                        </td>
+                        <td vertical-align="top">
+                            <br>
+                            <button type="button" id="showButton" >Show Inputs</button>
+                            <br>
+                            <br>
+                            <br>
+                        </td>
+                    </tr>
+                </form>
+            </table>
+            <div id="displayHERE"></div>
+        </div>
+
+        <div>
+            <table class="footer">
+                <tr class="footer">
+                    <!--
+                    footer
+                    -->
+                    <th class="footer">Medical Place for Health</th>
+                    <th align="center" class="footer">Contact Us</th>
+                    <th class="footer">
+                        <!--
+                        Pray for roscoe
+                        -->
+                        <a href="https://www.instagram.com/roscoelovescoco/">Instagram</a>
+                    </th>
+                </tr>
+                <tr class="footer">
+                    <!--
+                    FAKE PO BOX
+                    DO NOT MAIL HERE
+                    I WILL NOT GET IT
+                    -->
+                    <td align="center">PO Box 33112
+                    </td>
+                    <td align="center">(713) 555-5555
+                    </td>
+                    <td align="center">
+                        <a href="patsfirstdown.github.io/homework1/homework4.html">Company Site</a>
+                    </td>
+                </tr>
+                <tr class="footer">
+                    <!--
+                    Probably not my address
+                    don't visit me here
+                    pls
+                    -->
+                    <td align="center">33 Verstappen Ave
+                    </td>
+                    <td align="center">RedLineMedical719@gmail.com
+                    </td>
+                    <td align="center">
+                        <a href="https://www.linkedin.com/in/jayden-pickin">LinkedIn</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- Load external JavaScript -->
+        <script src="scriptshw4.js"></script>
+    </body>
+</html>
