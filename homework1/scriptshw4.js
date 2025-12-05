@@ -516,11 +516,13 @@ function newUser(fname) {
  }
 
 
+const fNameCookie = getCookie("fName");
+const welcomeMessage = document.getElementById("HelloWorld");
+const newUserButton = document.getElementById("newUserButton");
+const remeberMe = document.getElementById("remeberMe");
+
 document.addEventListener("DOMContentLoaded", () => {
-  const fNameCookie = getCookie("fName");
-  const welcomeMessage = document.getElementById("HelloWorld");
-  const newUserButton = document.getElementById("newUserButton");
-  const remeberMe = document.getElementById("remeberMe");
+  
 
   if(fNameCookie) {
     welcomeMessage.innerHTML = "Welcome Back " + fNameCookie;
@@ -539,6 +541,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 });
+
+const nonSecureFields = document.querySelectorAll("[non-secure]");
+
+fields.forEach(field => {
+  field.addEventListener("blur",()=>{
+    localStorage.setItem(field.id, field.value);
+  });
+});
+
+window.addEventListener("load",()=> {
+  const returning = getCookie("fName");
+  const stored = localStorage.getItem("savedfName");
+
+  if(returning) {
+    const popupMessage = confirm("Are you " + returning + "?");
+    if(popupMessage) {
+      restoreData();
+    } else {
+      clearLocal();
+    }
+  }
+});
+
+function restoreData() {
+  fields.forEach(field => {
+    const savedValue = localStorage.getItem(field.id);
+    if(savedValue !== null) {
+      field.value=savedValue
+    }
+  });
+}
+
+function clearLocal() {
+  fields.forEach(field => {
+    localStoarge.removeItem(field.id);
+  });
+}
+  
+
 
                                   
 
