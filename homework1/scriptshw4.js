@@ -462,3 +462,25 @@ function userCanSubmit(){
       document.getElementById("validTxt").innerHTML=errorMessage.join('<br>');
     }
 };
+
+/*
+New functions here
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const stateAbbrev = document.getElementById("state");
+  fetch("stateAbbrev.json")
+    .then(response => response.json())
+    
+    .then(states => {
+      states.forEach(state => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent  = state;
+        stateAbbrev.appendChild(option);
+      });
+    })
+});
+  
+
+
