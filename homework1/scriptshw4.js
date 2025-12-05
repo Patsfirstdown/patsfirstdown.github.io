@@ -520,6 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fNameCookie = getCookie("fName");
   const welcomeMessage = document.getElementById("HelloWorld");
   const newUserButton = document.getElementById("newUserButton");
+  const remeberMe = document.getElementById("remeberMe");
 
   if(fNameCookie) {
     welcomeMessage.innerHTML = "Welcome Back " + fNameCookie;
@@ -530,6 +531,13 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     welcomeMessage.innerHTML = "Welcome New User";
   }
+  
+  submit.addEventListener("click",()=>{
+      if(remeberMe) {
+        setCookie(fNameInput);
+      }
+  });
+  
 });
 
                                   
