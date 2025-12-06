@@ -559,7 +559,7 @@ window.addEventListener("load",()=> {
     if(popupMessage) {
       restoreData();
     } else {
-      clearLocal();
+      localStorage.clear();
     }
   }
 });
@@ -573,11 +573,7 @@ function restoreData() {
   });
 }
 
-function clearLocal() {
-  fields.forEach(field => {
-    localStoarge.removeItem(field.id);
-  });
-}
+
   
 
 
