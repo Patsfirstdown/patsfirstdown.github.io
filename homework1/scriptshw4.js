@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //if there is a cookie run this
   if(fNameCookie) {
     //says Welcome Back *NAME*
-    welcomeMessage.innerHTML = "Welcome Back " + fNameCookie.value;
+    welcomeMessage.innerHTML = "Welcome Back " + fNameCookie;
     //if user clicks new user, delete cookies
     newUserButton.addEventListener("click",()=>{
       newUser(fNameCookie);
@@ -563,7 +563,7 @@ nonSecureFields.forEach(field => {
 //when the window is loaded display popup message
 window.addEventListener("load",()=> {
   if(returning) {
-    const popupMessage = confirm("Are you " + returning.value + "?");
+    const popupMessage = confirm("Are you " + returning + "?");
     if(popupMessage) {
       restoreData();
     } else {
