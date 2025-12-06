@@ -544,7 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const nonSecureFields = document.querySelectorAll("[non-secure]");
 
-fields.forEach(field => {
+nonSecureFields.forEach(field => {
   field.addEventListener("blur",()=>{
     localStorage.setItem(field.id, field.value);
   });
