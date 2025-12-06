@@ -575,7 +575,7 @@ window.addEventListener("load",()=> {
 
 //refills data if happening
 function restoreData() {
-  fields.forEach(field => {
+  nonSecurefields.forEach(field => {
     const savedValue = localStorage.getItem(field.id);
     if(savedValue !== null) {
       field.value=savedValue
