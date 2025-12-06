@@ -564,6 +564,8 @@ window.addEventListener("load",()=> {
   }
 });
 
+
+
 function restoreData() {
   fields.forEach(field => {
     const savedValue = localStorage.getItem(field.id);
@@ -571,6 +573,10 @@ function restoreData() {
       field.value=savedValue
     }
   });
+}
+
+fnameInput.addEventListener("blur",()=>{
+  setCookie(fnameInput);
 }
 
 
