@@ -493,17 +493,14 @@ function setCookie(fNamevalue) {
 
 
 //retrieves cookie
-function getCookie(fName) {
-  let name = fName + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
+function getCookie(name) {
+  name = name + "=";
+  const decoded = decodeURIComponent(document.cookie).split(";");
+
+  for (let c of decoded) {
+    c = c.trim();
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length);
     }
   }
   return "";
