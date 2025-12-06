@@ -491,6 +491,8 @@ function setCookie(fNamevalue) {
   document.cookie = "fName=" + fNamevalue + ";" + expires + ";path=/";
 }
 
+
+//retrieves cookie
 function getCookie(fName) {
   let name = fName + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -507,53 +509,62 @@ function getCookie(fName) {
   return "";
 }
 
+
+//deletes cookie
 function deleteCookie(fName) {
   document.cookie = "fName=" + fName + "; expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
 }
 
+//calls delete cookie
+//actually redudent
 function newUser(fname) {
   deleteCookie(fname)
  }
 
-
+//creates constants
 const fNameCookie = getCookie("fName");
 const welcomeMessage = document.getElementById("HelloWorld");
 const newUserButton = document.getElementById("newUserButton");
 const remeberMe = document.getElementById("remeberMe");
+const nonSecureFields = document.querySelectorAll("[non-secure]");
 
+const returning = getCookie("fName");
+const stored = localStorage.getItem("savedfName");
+
+//on load run this
 document.addEventListener("DOMContentLoaded", () => {
   
-
+  //if there is a cookie run this
   if(fNameCookie) {
+    //says Welcome Back *NAME*
     welcomeMessage.innerHTML = "Welcome Back " + fNameCookie;
-
+    //if user clicks new user, delete cookies
     newUserButton.addEventListener("click",()=>{
       newUser(fNameCookie);
     });
+    
   } else {
+    //No cookie therefore new user
     welcomeMessage.innerHTML = "Welcome New User";
   }
-  
-  submit.addEventListener("click",()=>{
-      if(remeberMe) {
-        setCookie(fNameInput);
-      }
-  });
-  
 });
 
-const nonSecureFields = document.querySelectorAll("[non-secure]");
+//if you submit create cookie
+submit.addEventListener("click",()=>{
+    if(remeberMe) {
+      setCookie(fNameInput);
+    }
+});
 
+//creates local storage save info 
 nonSecureFields.forEach(field => {
   field.addEventListener("blur",()=>{
     localStorage.setItem(field.id, field.value);
   });
 });
 
+//when the window is loaded display popup message
 window.addEventListener("load",()=> {
-  const returning = getCookie("fName");
-  const stored = localStorage.getItem("savedfName");
-
   if(returning) {
     const popupMessage = confirm("Are you " + returning + "?");
     if(popupMessage) {
@@ -565,7 +576,7 @@ window.addEventListener("load",()=> {
 });
 
 
-
+//refills data if happening
 function restoreData() {
   fields.forEach(field => {
     const savedValue = localStorage.getItem(field.id);
@@ -575,6 +586,7 @@ function restoreData() {
   });
 }
 
+//creates cookie on fname blur
 fnameInput.addEventListener("blur",()=>{
   setCookie(fnameInput);
 });
