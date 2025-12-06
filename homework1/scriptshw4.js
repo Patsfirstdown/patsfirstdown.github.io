@@ -577,15 +577,4 @@ function restoreData() {
 
 fnameInput.addEventListener("blur",()=>{
   setCookie(fnameInput);
-}
-
-
-  
-
-
-                                  
-
-
-
-
-
+});
