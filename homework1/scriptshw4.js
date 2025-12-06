@@ -549,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //if you submit create cookie
 submit.addEventListener("click",()=>{
     if(remeberMe) {
-      setCookie(fNameInput);
+      setCookie(fNameInput.value);
     }
 });
 
@@ -585,5 +585,5 @@ function restoreData() {
 
 //creates cookie on fname blur
 fnameInput.addEventListener("blur",()=>{
-  setCookie(fnameInput);
+  setCookie(fnameInput.value);
 });
