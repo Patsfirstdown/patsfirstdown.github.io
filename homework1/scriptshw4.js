@@ -563,7 +563,7 @@ nonSecureFields.forEach(field => {
 //when the window is loaded display popup message
 window.addEventListener("load",()=> {
   if(returning) {
-    const popupMessage = confirm("Are you " + returning + "?");
+    const popupMessage = confirm("Are you " + getCookie("fName") + "?");
     if(popupMessage) {
       restoreData();
     } else {
