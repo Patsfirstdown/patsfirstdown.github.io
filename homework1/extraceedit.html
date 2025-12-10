@@ -355,39 +355,12 @@ Description: This is a patient intake form.
                         </td>
                     </tr>
                     <tr>
-                        <td class="limWidth">
-                            <br>
-                            <!--
-                            new button to validate
-                            -->
-                            <button id="validButton" type="button">Valid?</button>
-                            <br>
-                            <span type="error" id="validTxt"></span><br>
-                            <br>
-                        </td>
                         <td vertical-align="top">
                             <br>
                             <!--
                             submit button!
                             -->
-                            <input id="submitButton" type="submit" value="Submit" align="right">
-                            <br>
-                            <br>
-                            <br>
-                        </td>
-                        <td vertical-align="top">
-                            <br>
-                            <!--
-                            its a trap!
-                            -->
-                            <button onclick="patsfirstdown.github.io/homework1/homework3.html" type="button">CLEAR AND START OVER</button>
-                            <br>
-                            <br>
-                            <br>
-                        </td>
-                        <td vertical-align="top">
-                            <br>
-                            <button type="button" id="showButton" >Show Inputs</button>
+                            <button id="submitButtonISH" align="right">Submit</button>
                             <br>
                             <br>
                             <br>
@@ -397,7 +370,164 @@ Description: This is a patient intake form.
             </table>
             <div id="displayHERE"></div>
         </div>
-
+        <div id="popUpModal" class="modal">
+            <div class="popUpContent">
+                <table>
+                    <tr>
+                        <td>
+                            <span>fname</span>
+                        </td>
+                        <td>
+                            <span id="fnameModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>mInitial</span>
+                        </td>
+                        <td>
+                            <span id="mInitialModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>currentSymptoms</span>
+                        </td>
+                        <td>
+                            <span id="currentSymptomsModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>painLocation</span>
+                        </td>
+                        <td>
+                            <span id="painLocationModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>hairColor</span>
+                        </td>
+                        <td>
+                            <span id="hairColorModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>heardOfUs</span>
+                        </td>
+                        <td>
+                            <span id="heardOfUsModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>drinksPerWeek</span>
+                        </td>
+                        <td>
+                            <span id="drinksPerWeekModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>userId</span>
+                        </td>
+                        <td>
+                            <span id="userIdModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>password</span>
+                        </td>
+                        <td>
+                            <span id="passwordModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>password2</span>
+                        </td>
+                        <td>
+                            <span id="password2Modal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>lname</span>
+                        </td>
+                        <td>
+                            <span id="lnameModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>dateOfBirth</span>
+                        </td>
+                        <td>
+                            <span id="dateOfBirthModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>socialSecurity</span>
+                        </td>
+                        <td>
+                            <span id="socialSecurityModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>addressLine1</span>
+                        </td>
+                        <td>
+                            <span id="addressLine1Modal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>addressLine2</span>
+                        </td>
+                        <td>
+                            <span id="addressLine2Modal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>city</span>
+                        </td>
+                        <td>
+                            <span id="cityModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>state</span>
+                        </td>
+                        <td>
+                            <span id="stateModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>zipcode</span>
+                        </td>
+                        <td>
+                            <span id="zipcodeModal"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>email</span>
+                        </td>
+                        <td>
+                            <span id="emailModal"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <div>
             <table class="footer">
                 <tr class="footer">
