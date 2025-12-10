@@ -2,6 +2,8 @@
 Nov-10-2025
 Javascript File*/
 
+const modalAccessButton = document.getElementById("submitButtonISH");
+
 const currentDate = new Date();
 const todayMonth = currentDate.getMonth() + 1; // +1 because getMonth() returns 0-11
 const todayDate = currentDate.getDate();
@@ -403,7 +405,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     `;
   });
 
-  validButtonInput.addEventListener("click",()=>{
+  modalAccessButton.addEventListener("click",()=>{
     userCanSubmit();
   });
 });
@@ -589,10 +591,89 @@ New functions here
 
 const modalBox = document.getElementById("popUpModal");
 const closeBtn = document.getElementById("goBack");
-const modalAccessButton = document.getElementById("submitButtonISH");
+
+const fnameModalOutput = document.getElementById("fnameModal");
+const mInitialModalOutput = document.getElementById("mInitialModal");
+const currentSymptomsModalOutput = document.getElementById("currentSymptomsModal");
+const painLocationModalOutput = document.getElementById("painLocationModal");
+const hairColorModalOutput = document.getElementById("hairColorModal");
+const heardOfUsModalOutput = document.getElementById("heardOfUsModal");
+const drinksPerWeekModalOutput = document.getElementById("drinksPerWeekModal");
+const userIdModalOutput = document.getElementById("userIdModal");
+const passwordModalOutput = document.getElementById("passwordModal");
+const password2ModalOutput = document.getElementById("password2Modal");
+const lnameModalOutput = document.getElementById("lnameModal");
+const dateOfBirthModalOutput = document.getElementById("dateOfBirthModal");
+const socialSecurityModalOutput = document.getElementById("socialSecurityModal");
+const addressLine1ModalOutput = document.getElementById("addressLine1Modal");
+const addressLine2ModalOutput = document.getElementById("addressLine2Modal");
+const cityModalOutput = document.getElementById("cityModal");
+const stateModalOutput = document.getElementById("stateModal");
+const zipcodeModalOutput = document.getElementById("zipcodeModal");
+const emailModalOutput = document.getElementById("emailModal");
+
+const fnameModalError = document.getElementById("fnameError");
+const mInitialModalError = document.getElementById("mInitialError");
+const currentSymptomsModalError = document.getElementById("currentSymptomsError");
+const painLocationModalError = document.getElementById("painLocationError");
+const hairColorModalError = document.getElementById("hairColorError");
+const heardOfUsModalError = document.getElementById("heardOfUsError");
+const drinksPerWeekModalError = document.getElementById("drinksPerWeekError");
+const userIdModalError = document.getElementById("userIdError");
+const passwordModalError = document.getElementById("passwordError");
+const password2ModalError = document.getElementById("password2Error");
+const lnameModalError = document.getElementById("lnameError");
+const dateOfBirthModalError = document.getElementById("dateOfBirthError");
+const socialSecurityModalError = document.getElementById("socialSecurityError");
+const addressLine1ModalError = document.getElementById("addressLine1Error");
+const addressLine2ModalError = document.getElementById("addressLine2Error");
+const cityModalError = document.getElementById("cityError");
+const stateModalError = document.getElementById("stateError");
+const zipcodeModalError = document.getElementById("zipcodeError");
+const emailModalError = document.getElementById("emailError");
+
 
 modalAccessButton.onclick = function() {
   modalBox.style.display = "block";
+  document.getElementById("fnameModal").innerHTML=fnameModalOutput;
+  document.getElementById("mInitialModal").innerHTML=mInitialModalOutput;
+  document.getElementById("currentSymptomsModal").innerHTML=currentSymptomsModalOutput;
+  document.getElementById("painLocationModal").innerHTML=painLocationModalOutput;
+  document.getElementById("hairColorModal").innerHTML=hairColorModalOutput;
+  document.getElementById("heardOfUsModal").innerHTML=heardOfUsModalOutput;
+  document.getElementById("drinksPerWeekModal").innerHTML=drinksPerWeekModalOutput;
+  document.getElementById("userIdModal").innerHTML=userIdModalOutput;
+  document.getElementById("passwordModal").innerHTML=passwordModalOutput;
+  document.getElementById("password2Modal").innerHTML=password2ModalOutput;
+  document.getElementById("lnameModal").innerHTML=lnameModalOutput;
+  document.getElementById("dateOfBirthModal").innerHTML=dateOfBirthModalOutput;
+  document.getElementById("socialSecurityModal").innerHTML=socialSecurityModalOutput;
+  document.getElementById("addressLine1Modal").innerHTML=addressLine1ModalOutput;
+  document.getElementById("addressLine2Modal").innerHTML=addressLine2ModalOutput;
+  document.getElementById("cityModal").innerHTML=cityModalOutput;
+  document.getElementById("stateModal").innerHTML=stateModalOutput;
+  document.getElementById("zipcodeModal").innerHTML=zipcodeModalOutput;
+  document.getElementById("emailModal").innerHTML=emailModalOutput;
+
+  document.getElementById("fnameAllowed").innerHTML.value=fnameModalError;
+  document.getElementById("mInitialAllowed").innerHTML.value=mInitialModalError;
+  document.getElementById("currentSymptomsAllowed").innerHTML.value=currentSymptomsModalError;
+  document.getElementById("painLocationAllowed").innerHTML.value=painLocationModalError;
+  document.getElementById("hairColorAllowed").innerHTML.value=hairColorModalError;
+  document.getElementById("heardOfUsAllowed").innerHTML.value=heardOfUsModalError;
+  document.getElementById("drinksPerWeekAllowed").innerHTML.value=drinksPerWeekModalError;
+  document.getElementById("userIdAllowed").innerHTML.value=userIdModalError;
+  document.getElementById("passwordAllowed").innerHTML.value=passwordModalError;
+  document.getElementById("password2Allowed").innerHTML.value=password2ModalError;
+  document.getElementById("lnameAllowed").innerHTML.value=lnameModalError;
+  document.getElementById("dateOfBirthAllowed").innerHTML.value=dateOfBirthModalError;
+  document.getElementById("socialSecurityAllowed").innerHTML.value=socialSecurityModalError;
+  document.getElementById("addressLine1Allowed").innerHTML.value=addressLine1ModalError;
+  document.getElementById("addressLine2Allowed").innerHTML.value=addressLine2ModalError;
+  document.getElementById("cityAllowed").innerHTML.value=cityModalError;
+  document.getElementById("stateAllowed").innerHTML.value=stateModalError;
+  document.getElementById("zipcodeAllowed").innerHTML.value=zipcodeModalError;
+  document.getElementById("emailAllowed").innerHTML.value=emailModalError;
 }
 
 
