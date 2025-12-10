@@ -587,7 +587,7 @@ fnameInput.addEventListener("blur",()=>{
 New functions here
 */
 
-const modalBox = document.getElementById("modal");
+const modalBox = document.getElementById("popUpModal");
 const closeBtn = document.getElementById("goBack");
 const modalAccessButton = document.getElementById("submitButtonISH");
 
