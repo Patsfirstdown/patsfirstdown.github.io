@@ -463,10 +463,6 @@ function userCanSubmit(){
     }
 };
 
-/*
-New functions here
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
   const stateAbbrev = document.getElementById("state");
   fetch("stateAbbrev.json")
@@ -505,7 +501,6 @@ function getCookie(name) {
   }
   return "";
 }
-
 
 //deletes cookie
 function deleteCookie(fName) {
@@ -587,3 +582,14 @@ function restoreData() {
 fnameInput.addEventListener("blur",()=>{
   setCookie(fnameInput.value);
 });
+
+/*
+New functions here
+*/
+
+
+
+
+
+
+
