@@ -704,11 +704,11 @@ async function googelAPiCall(zipcodeHere) {
     console.log("trying")
     const respone = await fetch(googelUrlLink);
   
-    if(!response.ok) {
+    if(!respone.ok) {
       console.warn("YOU FALIURE ZIP LOOKUP FAILED YOU FAILURE! QUIT CODING!",data.status);
       return;
     }
-    const data = await response.json();
+    const data = await respone.json();
     const result = data.results[0];
   
     const city = placeData["place name"];
