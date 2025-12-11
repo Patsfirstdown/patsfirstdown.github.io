@@ -698,7 +698,7 @@ zipcodeInput.addEventListener("input", async function() {
 });
 
 async function googelAPiCall(zipcodeHere) {
-  const apiKey = AIzaSyA-jkHR46VuACKUIm7nlFLbEd678iUbbWo
+  const apiKey = "AIzaSyA-jkHR46VuACKUIm7nlFLbEd678iUbbWo"
   const googelUrlLink = 'https://maps.googelapis.com/maps/api/geocode/json?address=${zipcodeHere}&${apiKey}';
 
   try {
