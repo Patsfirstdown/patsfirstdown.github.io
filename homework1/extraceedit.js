@@ -685,7 +685,46 @@ modalAccessButton.addEventListener("click",()=>{
   userCanSubmit();
 });
 
+zipcodeInput.addEventListener("input", async function() {
+  if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
+    googelAPiCall(zipcodeInput);
+  }
+});
 
+async function googelAPiCall(zipcodeHere) {
+  const apiKey = AIzaSyA-jkHR46VuACKUIm7nlFLbEd678iUbbWo
+  const googelUrlLink = 'https://maps.googelapis.com/maps/api/geocode/json?address=${zipcodeHere}&${apiKey}';
+
+  try {
+    const respone = await fetch(googelUrlLink);
+    const data = await respone.json();
+
+    if(data.status !=='OK') {
+      console.warn("YOU FALIURE ZIP LOOKUP FAILED YOU FAILURE! QUIT CODING!",data.status);
+      return;
+    }
+
+    const result = data.results[0];
+
+    let city = "";
+    let state = "";
+
+    result.address_components.forEach(component => {
+      if(component.types.includes("locality")) {
+        city = component.long_name;
+      }
+      if(component.types.includes("administrative_area_level_1")) {
+        state = component.short_name;
+      } 
+    });
+
+    if (city) document.getElementById("city").value = city;
+    if (state) document.getElementById("state").value = state;
+  }
+  catch (error) {
+    console.error("API ERROR YOU FOOL: ",error);
+  }
+}
 
 
 
