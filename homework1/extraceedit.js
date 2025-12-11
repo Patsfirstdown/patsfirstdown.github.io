@@ -404,10 +404,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     password2: ${password2Input.value}<br>
     `;
   });
-
-  modalAccessButton.addEventListener("click",()=>{
-    userCanSubmit();
-  });
 });
 
 function userCanSubmit(){
@@ -675,9 +671,6 @@ modalAccessButton.onclick = function() {
   document.getElementById("emailAllowed").innerHTML=emailModalError;
 }
 
-
-
-
 closeBtn.onclick = function() {
   modalBox.style.display = "none";
 }
@@ -687,6 +680,10 @@ window.onclick = function(event) {
     modalBox.style.display = "none";
   }
 }
+
+modalAccessButton.addEventListener("click",()=>{
+  userCanSubmit();
+});
 
 
 
