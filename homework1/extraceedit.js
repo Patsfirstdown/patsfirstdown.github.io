@@ -104,6 +104,7 @@ function checklname(){
   if(lnameValue.length>0){
     if(!lengthAllowed(lnameValue,30,1)){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Too Long";
+      lnameInput.style.border = "2px solid red";
       //userCanSubmit()
       return false;
     }
@@ -116,6 +117,7 @@ function checklname(){
       document.getElementById("lnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, 2-5, and Dashes only";
       //userCanSubmit()
       return false;
+      lnameInput.style.border = "2px solid red";
     }
   }
 }
@@ -134,11 +136,13 @@ function checkdateOfBirth(){
   else if(dob > oldDate){
     //document.getElementById("dOBError").innerHTML=oldDate;
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be younger than 120";
+    dateOfBirthInput.style.border = " 2px solid red";
     //userCanSubmit()
     return false;
   }
   else{
     document.getElementById("dOBError").innerHTML="NOT ALLOWED--Must be born already";
+    dateOfBirthInput.style.border = " 2px solid red";
     //userCanSubmit()
     return false;
   }
@@ -154,8 +158,10 @@ function checksocialSecurity(){
   }
   else{
     document.getElementById("socialSecurityError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
+    socialSecurityInput.style.border = " 2px solid red";
     //userCanSubmit()
     return false;
+    
   }
 }
 
@@ -165,6 +171,7 @@ function checkaddressLine1(){
     if(!lengthAllowed(addressLine1Input.value,30,2)){
       document.getElementById("addressLine1Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
       //userCanSubmit()
+      addressLine1Input.style.border = " 2px solid red";
       return false;
     }
     else{
@@ -181,6 +188,7 @@ function checkaddressLine2(){
     if(!lengthAllowed(addressLine2Input.value,30,2)){
       document.getElementById("addressLine2Error").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
       //userCanSubmit()
+      addressLine2Input.style.border = " 2px solid red";
       return false;
     }
     else{
@@ -199,6 +207,7 @@ function checkcity(){
     if(!lengthAllowed(cityInput.value,30,2)){
       document.getElementById("cityError").innerHTML="NOT ALLOWED--Limited to 2-30 characters";
       //userCanSubmit()
+      cityInput.style.border = " 2px solid red";
       return false;
     }
     else{
@@ -229,6 +238,7 @@ function checkzipcode(){
       if(!lengthAllowed(zipcodeValue,30,2)){
         document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Limited to 5-10 numbers";
         //userCanSubmit()
+        zipcodeInput.style.border = " 2px solid red";
         return false;
       }
       else{
@@ -240,6 +250,7 @@ function checkzipcode(){
     else{
       document.getElementById("zipcodeError").innerHTML="NOT ALLOWED--Numbers and Dashes only";
       //userCanSubmit()
+      zipcodeInput.style.border = " 2px solid red";
       return false;
     }
   }
@@ -255,7 +266,8 @@ function checkemail(){
     else{
       document.getElementById("emailError").innerHTML="NOT ALLOWED--Invalid Format";
       //userCanSubmit()
-    return false;
+      emailInput.style.border = " 2px solid red";
+      return false;
     }
   }
 }
@@ -264,6 +276,7 @@ function checkcurrentSymptoms(){
   if(currentSymptomsInput.value.includes('"')){
     document.getElementById("currentSymptomsError").innerHTML='NOT ALLOWED--" Is not allowed';
     //userCanSubmit()
+    currentSymptomsInput.style.border = " 2px solid red";
     return false;
   }
   else{
@@ -304,12 +317,14 @@ function checkuserId(){
       else{
         document.getElementById("userIdError").innerHTML="NOT ALLOWED--Invalid Length 5-30 characters";
         //userCanSubmit()
+        userIdInput.style.border = " 2px solid red";
         return false;
       }
     }
     else{
       document.getElementById("userIdError").innerHTML="NOT ALLOWED--Must be letter, number or dashes";
       //userCanSubmit()
+      userIdInput.style.border = " 2px solid red";
       return false;
     }
   }
@@ -326,12 +341,14 @@ function checkpassword(){
       else{
         document.getElementById("password1Error").innerHTML="NOT ALLOWED--Invalid Length 8-30 characters";
         //userCanSubmit()
+        passwordInput.style.border = " 2px solid red";
         return false;
       }
     }
     else{
       document.getElementById("password1Error").innerHTML="NOT ALLOWED--Must be letter, number, special charater or dashes";
       //userCanSubmit()
+      passwordInput.style.border = " 2px solid red";
       return false;
     }
   }
@@ -341,6 +358,7 @@ function checkpasswordmatch(){
   if(passwordInput.value!=password2Input.value){
     document.getElementById("password2Error").innerHTML="Passwords Don't match";
     //userCanSubmit()
+    password2Input.style.border = " 2px solid red";
     return false;
   }
   else{
