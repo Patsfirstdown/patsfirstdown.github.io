@@ -59,6 +59,8 @@ function checkfname(){
   if(fnameValue.length>0){
     if(!lengthAllowed(fnameValue,30,1)){
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Too Long";
+      fnameInput.style.border = "2px solid red";
+
       //userCanSubmit()
       return false;
     }
@@ -69,6 +71,7 @@ function checkfname(){
     }
     else{
       document.getElementById("fnameError").innerHTML="NOT ALLOWED--Letters, Apostrophes, and Dashes only";
+      fnameInput.style.border = "2px solid red";
       //userCanSubmit()
       return false;
     }
@@ -87,6 +90,7 @@ function checkmInitial(){
     else{
       document.getElementById("mInitialError").innerHTML="NOT ALLOWED--Letters only";
       //userCanSubmit()
+      mIntialInput.style.border = "2px solid red";
       return false;
     }
   }
