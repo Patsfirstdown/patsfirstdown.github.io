@@ -688,12 +688,12 @@ modalAccessButton.addEventListener("click",()=>{
 zipcodeInput.addEventListener("input", async function() {
   const zipcodeValue = zipcodeInput.value;
   console.log(zipcodeValue+"ZipcodeValue");
-  console.log(zipcodeInput.length == 5);
-  console.log(/^[0-9]+$/.test(zipcodeInput));
-  console.log(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput));
-  if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
+  console.log(zipcodeValue.length == 5);
+  console.log(/^[0-9]+$/.test(zipcodeValue));
+  console.log(zipcodeValue.length == 5 && /^[0-9]+$/.test(zipcodeValue));
+  if(zipcodeValue.length == 5 && /^[0-9]+$/.test(zipcodeValue)) {
     console.log("passed")
-    googelAPiCall(zipcodeInput);
+    googelAPiCall(zipcodeValue);
   }
 });
 
