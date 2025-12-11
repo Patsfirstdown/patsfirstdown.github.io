@@ -710,7 +710,9 @@ async function googelAPiCall(zipcodeHere) {
     }
     const data = await respone.json();
     const result = data.results[0];
-  
+
+    const placeData = data.places[0];
+    
     const city = placeData["place name"];
     const state = placeData["state abbreviation"];
     
