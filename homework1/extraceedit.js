@@ -686,7 +686,9 @@ modalAccessButton.addEventListener("click",()=>{
 });
 
 zipcodeInput.addEventListener("input", async function() {
+  console.log(zipcodeInput);
   const zipcodeValue = zipcodeInput.value;
+  console.log(zipcodeValue);
   if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
     googelAPiCall(zipcodeInput);
   }
@@ -718,9 +720,13 @@ async function googelAPiCall(zipcodeHere) {
         state = component.short_name;
       } 
     });
-
-    if (city) document.getElementById("city").value = city;
-    if (state) document.getElementById("state").value = state;
+    console.log("MADE IT HERE");
+    if (city) {
+      document.getElementById("city").value = city;
+    }
+    if (state) {
+      document.getElementById("state").value = state;
+    }
   }
   catch (error) {
     console.error("API ERROR YOU FOOL: ",error);
