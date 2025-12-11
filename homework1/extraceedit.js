@@ -705,11 +705,10 @@ async function googelAPiCall(zipcodeHere) {
     const respone = await fetch(googelUrlLink);
   
     if(!respone.ok) {
-      console.warn("YOU FALIURE ZIP LOOKUP FAILED YOU FAILURE! QUIT CODING!",data.status);
+      console.warn("YOU FALIURE ZIP LOOKUP FAILED YOU FAILURE! QUIT CODING!",respone.status);
       return;
     }
     const data = await respone.json();
-    const result = data.results[0];
 
     const placeData = data.places[0];
     
