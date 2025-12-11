@@ -724,7 +724,7 @@ async function googelAPiCall(zipcodeHere) {
     }
     
     console.log("MADE IT HERE");
-  } catch {
+  } catch (error) {
     console.error("EROOR YOU FOOL",error);
   }
 }
