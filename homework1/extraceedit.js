@@ -688,6 +688,9 @@ modalAccessButton.addEventListener("click",()=>{
 zipcodeInput.addEventListener("input", async function() {
   const zipcodeValue = zipcodeInput.value;
   console.log(zipcodeValue+"ZipcodeValue");
+  console.log(zipcodeInput.length == 5);
+  console.log(/^[0-9]+$/.test(zipcodeInput));
+  console.log(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput));
   if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
     console.log("passed")
     googelAPiCall(zipcodeInput);
