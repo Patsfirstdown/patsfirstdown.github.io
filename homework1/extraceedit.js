@@ -698,44 +698,34 @@ zipcodeInput.addEventListener("input", async function() {
 });
 
 async function googelAPiCall(zipcodeHere) {
-  const apiKey = "AIzaSyA-jkHR46VuACKUIm7nlFLbEd678iUbbWo"
-  const googelUrlLink = 'https://maps.googleapis.com/maps/api/geocode/json?address=${zipcodeHere}&${apiKey}';
-
-  try {
+  const googelUrlLink = `https://api.zippopotam.us/us/${zipcodeHere}`;
+    
+  try{
     console.log("trying")
     const respone = await fetch(googelUrlLink);
-    const data = await respone.json();
-
-    if(data.status !=='OK') {
+  
+    if(!response.ok) {
       console.warn("YOU FALIURE ZIP LOOKUP FAILED YOU FAILURE! QUIT CODING!",data.status);
       return;
     }
-
+    const data = await response.json();
     const result = data.results[0];
-
-    let city = "";
-    let state = "";
-
-    result.address_components.forEach(component => {
-      if(component.types.includes("locality")) {
-        city = component.long_name;
-        console.log(component.long_name+"city")
-      }
-      if(component.types.includes("administrative_area_level_1")) {
-        state = component.short_name;
-        console.log(component.short_name+"state")
-      } 
-    });
-    console.log("MADE IT HERE");
-    if (city) {
+  
+    const city = placeData["place name"];
+    const state = placeData["state abbreviation"];
+    
+    console.log(city+"city");
+    console.log(state+"state");
+    if(city) {
       document.getElementById("city").value = city;
     }
-    if (state) {
+    if(state) {
       document.getElementById("state").value = state;
     }
-  }
-  catch (error) {
-    console.error("API ERROR YOU FOOL: ",error);
+    
+    console.log("MADE IT HERE");
+  } catch {
+    console.error("EROOR YOU FOOL",error);
   }
 }
 
