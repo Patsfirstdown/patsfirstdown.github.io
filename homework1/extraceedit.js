@@ -686,10 +686,10 @@ modalAccessButton.addEventListener("click",()=>{
 });
 
 zipcodeInput.addEventListener("input", async function() {
-  console.log(zipcodeInput+"ZipcodeINput");
   const zipcodeValue = zipcodeInput.value;
   console.log(zipcodeValue+"ZipcodeValue");
   if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
+    console.log("passed")
     googelAPiCall(zipcodeInput);
   }
 });
@@ -699,6 +699,7 @@ async function googelAPiCall(zipcodeHere) {
   const googelUrlLink = 'https://maps.googelapis.com/maps/api/geocode/json?address=${zipcodeHere}&${apiKey}';
 
   try {
+    console.log("trying")
     const respone = await fetch(googelUrlLink);
     const data = await respone.json();
 
@@ -715,9 +716,11 @@ async function googelAPiCall(zipcodeHere) {
     result.address_components.forEach(component => {
       if(component.types.includes("locality")) {
         city = component.long_name;
+        console.log(component.long_name+"city")
       }
       if(component.types.includes("administrative_area_level_1")) {
         state = component.short_name;
+        console.log(component.short_name+"state")
       } 
     });
     console.log("MADE IT HERE");
