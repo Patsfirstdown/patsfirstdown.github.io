@@ -378,9 +378,9 @@ document.addEventListener("DOMContentLoaded",()=>{
   password2Input.addEventListener("input", checkpasswordmatch);
   
 
-  const showAllButton = document.getElementById("showButton");
   const displayHERE = document.getElementById("displayHERE");
   
+  /*const showAllButton = document.getElementById("showButton");
   showAllButton.addEventListener("click",()=>{
     displayHERE.innerHTML = `
     fname: ${fnameInput.value}<br>
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     password: ${passwordInput.value}<br>
     password2: ${password2Input.value}<br>
     `;
-  });
+  });*/
 });
 
 function userCanSubmit(){
@@ -686,9 +686,9 @@ modalAccessButton.addEventListener("click",()=>{
 });
 
 zipcodeInput.addEventListener("input", async function() {
-  console.log(zipcodeInput);
+  console.log(zipcodeInput+"ZipcodeINput");
   const zipcodeValue = zipcodeInput.value;
-  console.log(zipcodeValue);
+  console.log(zipcodeValue+"ZipcodeValue");
   if(zipcodeInput.length == 5 && /^[0-9]+$/.test(zipcodeInput)) {
     googelAPiCall(zipcodeInput);
   }
